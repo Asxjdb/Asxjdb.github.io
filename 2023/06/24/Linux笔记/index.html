@@ -1,0 +1,1607 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/violin-sqr.png">
+  <link rel="icon" href="/img/violin-sqr.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Asxjdb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Linux、命令行相关笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Asxjdb">
+<meta property="og:description" content="Linux、命令行相关笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656990922392.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656990978018.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230502192126645.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230502192541049.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230507160047163.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230623185136711.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944206598.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944307394.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944394013.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944440047.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944471482.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944510926.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944559394.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944580663.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944597341.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944620449.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944632995.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944645952.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944660444.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944682001.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944704386.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944715579.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944733755.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944844322.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999555958.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999612634.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999847654.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999862257.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999882712.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657012481840.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017409226.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017421259.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017428727.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017436528.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017443961.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017451438.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017458325.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017463860.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017484411.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017490721.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017498032.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017562386.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017544644.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017584174.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/8db546df253398ab48da24827d23267131d0f0b5.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/040c89762e6897fd692b5b3880a9aea360e68d33.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/52fe246635118be1ee19eddbe72e762f672007ee.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/87b5500206916e0ab39bbf14e5a0e51a69cf5abf.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/2963ee17bf4a1529e6fb2c6510ec2e479808bb3b.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6360c458e279859bf515ed83fd162b25a2f3df20.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/7266b75850f3a45b3a7efd063486e210da5a9672.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/aec7e124ad8d472f3e5f9e7f870ac3143b4be04f.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/ba73b5b936398406da0346d550728bda76099303.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/2a018112e898289ba0ee658129312ed284b43859.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/4c2cf191ddcd9a41f5f8cb6f4837514e713cee0f.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/4f059085754da07eee317b442a275d4f078e0ee4.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/06f2fb7fd182cfad79eedc69f02c237a0adb8041.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6dc6573228ce3f3085dd67be4dc28369c999b7fa.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6fb6e112375923217ab92b199dede6ff2950e659.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/7cd12b78dbcee668dd833387ded7f05ec94e1e50.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230502190128929.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230531172442342.png">
+<meta property="og:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230531172501554.png">
+<meta property="article:published_time" content="2023-06-24T08:45:30.000Z">
+<meta property="article:modified_time" content="2023-06-24T08:48:23.890Z">
+<meta property="article:author" content="Asxjdb">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="命令行">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://asxjdb.github.io/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656990922392.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Linux笔记 - Asxjdb</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"asxjdb.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Asxjdb</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Linux笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-24 16:45" pubdate>
+          2023年6月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          17k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          142 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux笔记</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：8 分钟前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Linux笔记"><a href="#Linux笔记" class="headerlink" title="Linux笔记"></a>Linux笔记</h2><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656990922392.png" srcset="/img/loading.gif" lazyload alt="1656990922392"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656990978018.png" srcset="/img/loading.gif" lazyload alt="1656990978018"></p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li><p>ls	打印当前目录的列表</p>
+</li>
+<li><ol>
+<li>ls -la	-l让当前目录的文件呈列表显示，a列出所有文件，包括隐藏文件</li>
+<li>ls -lh    列出文件和目录，并显示大小(human-readable)</li>
+</ol>
+</li>
+<li><p>cat 文件名    查看文件内容？：连接文件并打印到标准输出设备上</p>
+</li>
+<li><p><code>tee 文件名</code>    追加内容</p>
+</li>
+<li><p><code>&lt;&gt;</code> 重定向：<code>tee &lt; a &gt; b</code> 把a写到b中</p>
+</li>
+<li><p>cd 目录    进入该目录</p>
+</li>
+<li><ol>
+<li>cd ..    进入当前目录的上一级目录</li>
+</ol>
+</li>
+<li><p>pwd    输出当前路径</p>
+</li>
+<li><p>echo    字符串输出</p>
+</li>
+<li><p>mkdir    创建目录</p>
+</li>
+<li><p>mv    重命名或移动文件</p>
+</li>
+<li><p>cp    拷贝文件</p>
+</li>
+<li><p>man 命令    查看操作手册</p>
+</li>
+<li><p>head -n file   查看文件的前n行</p>
+</li>
+<li><p>tail -n 文件路径    查看文件的末n行</p>
+</li>
+<li><p><code>wc -l 文件路径</code> :   统计文件内容的行数。<code>-h</code>表示lines，行数。</p>
+<p><code>wc -w 文件路径</code> :   统计文件内容的单词数，依据空格来判断单词数量。<code>-w</code> 表示words，单词数。</p>
+<p><code>wc -c 文件路径</code> ：统计文件的字节数。<code>-c</code>表示bytes,字节数。</p>
+</li>
+<li><p>ps -ef :查看服务器进程信息。-e 列出全部进程， f  显示全部的列</p>
+</li>
+<li><p><code>top</code> ：查看服务器的进程占的资源（<code>q</code>指令退出）</p>
+<p>M:   将结果按内存从高到低进行降序排列<br>P： 表示将结果按照CPU使用率从高到低进行降序排列；<br>1： 当服务器拥有多个cpu的时候可以使用“1”快捷键来切换是否展示显示各个cpu的详细信息；</p>
+<p>t:   树形显示</p>
+</li>
+<li><p><code>du -sh 文件路径</code> ：查看文件的真实大小</p>
+</li>
+<li><p><code>find 路径 -name *.conf</code> ：查询指定路径下以.conf结尾的文件</p>
+</li>
+<li><p><code>reboot</code> ：重启计算机</p>
+</li>
+<li><p><code>w</code>:  查看ssh连接到本机的情况</p>
+</li>
+<li><p><code>find / -name +文件名</code> 搜索文件</p>
+<p><code>locate 文件名</code>  搜索文件</p>
+</li>
+<li><p><code>watch -n 1 ls -lha</code>  实时显示命令执行结果</p>
+</li>
+<li><ul>
+<li><p><code>sudo su</code></p>
+</li>
+<li><p><code>sudo !!</code>  <code>!!</code>代表上一条命令</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><code>etc/environment</code> 环境变量表</li>
+<li><code>unset name</code>删除环境变量</li>
+</ul>
+</li>
+<li><p><code>tree -L 1 /</code> 一级，树形，列出根目录</p>
+</li>
+<li><p>gcc x.c -o x     对x.c进行编译</p>
+</li>
+<li><p>.&#x2F;a.out    执行a.out</p>
+</li>
+<li><p><code>wc -l f.txt</code>    查看文件<code>f.txt</code>有多少行</p>
+</li>
+<li><ol>
+<li><code>head -n 10 f.txt</code>    查看<code>f.txt</code>的前十行</li>
+<li><code>tail -n 5 f.txt</code>    查看<code>f.txt</code>的后五行</li>
+</ol>
+</li>
+<li><p><code>touch b.jpg</code>    创建文件<code>b.jpg</code></p>
+</li>
+<li><p><code>rm b.jpg</code>    删除<code>b.jpg</code></p>
+</li>
+<li><p>man ls    查看ls的手册，常见的<code>man</code>文档部分包括：</p>
+<ul>
+<li>Section 1: User Commands - 用户命令</li>
+<li>Section 2: System Calls - 系统调用</li>
+<li>Section 3: C Library Functions - C标准库函数</li>
+<li>Section 4: Devices and Special Files - 设备和特殊文件</li>
+<li>Section 5: File Formats and Conventions - 文件格式和约定</li>
+<li>Section 6: Games and Fun Stuff - 游戏和娱乐内容</li>
+<li>Section 7: Miscellaneous Information - 杂项信息</li>
+<li>Section 8: System Administration Commands - 系统管理命令</li>
+</ul>
+</li>
+<li><p>ls –help    查看ls参数的简要说明</p>
+</li>
+<li><p><code>file 文件名</code>查看文件类型</p>
+</li>
+<li><p><code>diff 文件1 文件2</code> 比较两个文件是否相同</p>
+</li>
+<li><p><code>apt update</code>  更新本地的数据库缓存</p>
+</li>
+<li><p><code>apt show 包</code>  显示包信息</p>
+</li>
+<li><p><code>apt remove 包</code>  删除包信息</p>
+</li>
+<li><p><code>apt upgrade 包</code>  自动安装更新</p>
+</li>
+<li><p>压缩包：打包+压缩</p>
+</li>
+</ul>
+<img src="./image-20230502192126645.png" srcset="/img/loading.gif" lazyload>
+
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230502192541049.png" srcset="/img/loading.gif" lazyload alt="image-20230502192541049"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230507160047163.png" srcset="/img/loading.gif" lazyload alt="image-20230507160047163"></p>
+<ul>
+<li><p>第一列<code>root</code>表示该文件的拥有者，必须在<code>/etc/passwd</code>里面，可以用<code>chown</code>改变</p>
+<ul>
+<li>chown [-R] 账号名称 文件或目录</li>
+<li>chown [-R] 账号名称:用户组名称 文件或目录</li>
+</ul>
+</li>
+<li><p>第二列表示所属用户组，必须在<code>/etc/group</code>里面，可以使用<code>chown</code>和<code>chgrp</code>改变</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://heary.cn/posts/www-data-Ubuntu-Web%E6%9C%8D%E5%8A%A1%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7-%E7%BB%84/">参考</a></p>
+</li>
+<li><ul>
+<li><p><code>sudo useradd xxx</code></p>
+</li>
+<li><p><code>sudo su xxx</code></p>
+</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p>参考：<a target="_blank" rel="noopener" href="https://yeasy.gitbook.io/docker_practice/">https://yeasy.gitbook.io/docker_practice/</a></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-hello-world.html">https://www.runoob.com/docker/docker-hello-world.html</a></p>
+</li>
+<li><p><code>docker pull name</code>  获取镜像</p>
+</li>
+<li><p><code>docker ps</code>   查看运行的容器</p>
+</li>
+<li><p><code>docker logs</code>  查看容器标准输出</p>
+</li>
+<li><p><code>docker stop id</code> 命令来停止容器</p>
+</li>
+<li><p><code>docker info</code>查看docker信息</p>
+</li>
+<li><p><code>docker images</code> 查看本地镜像</p>
+</li>
+<li><p><code>docker container ls -a</code>  查看所有容器</p>
+</li>
+<li><p><code>docker run -dit ubuntu</code>  创建镜像</p>
+</li>
+<li><p><code>docker exec -it 69d1 bash</code>  进入镜像，从这里exit不会导致镜像结束</p>
+</li>
+</ul>
+<h3 id="进程的使用"><a href="#进程的使用" class="headerlink" title="进程的使用"></a>进程的使用</h3><ul>
+<li><p>.&#x2F;fork &amp;     让可执行程序fork在后台执行，&amp;：让程序在后台执行</p>
+</li>
+<li><p><code>ps</code> 查看在后台运行的程序</p>
+</li>
+<li><ol>
+<li><code>ps -uf</code>     <code>u</code>显示当前用户的所有进程，<code>f</code>显示进程之间的关系</li>
+<li><code>ps | grep fork</code>    查看是否有名为fork的进程依然存在</li>
+</ol>
+</li>
+<li><p>kill 给进程发各种信号</p>
+</li>
+<li><ol>
+<li><code>kill -9 &#123;PID&#125;</code>    终止某个进程</li>
+<li><code>pkill</code>    <code>pkill -9 fork</code>避免不同终端PID不同的问题</li>
+</ol>
+</li>
+<li><p><code>ctrl+z</code> 把当前命令放入后台，并暂停</p>
+</li>
+<li><p><code>jobs</code> 查看当前在后台的命令</p>
+</li>
+<li><p><code>fg %num</code>  将后台的命令调至前台</p>
+</li>
+<li><p><code>bg %num</code>  将后台暂停的进程在后台执行</p>
+</li>
+<li><p><code>kill %num</code>  终止命令编号为numd的进程</p>
+</li>
+</ul>
+<h3 id="shell小工具"><a href="#shell小工具" class="headerlink" title="shell小工具"></a>shell小工具</h3><ul>
+<li><p>一个据说更好的shell：<code>zsh</code></p>
+</li>
+<li><p>man简洁版：<code>tldr</code></p>
+<ul>
+<li><code>tldr ls</code></li>
+</ul>
+</li>
+<li><p>在终端查看图片：<code>sudo apt-get install imagemagick</code></p>
+<ul>
+<li><code>display nihao.png</code></li>
+</ul>
+</li>
+<li><p>MySQL美化：<code>mycli</code></p>
+</li>
+<li></li>
+</ul>
+<h3 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h3><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230623185136711.png" srcset="/img/loading.gif" lazyload alt="image-20230623185136711"></p>
+<ul>
+<li><p>新建会话<code>tmux new -s session_name</code></p>
+</li>
+<li><p>分离会话<code>tmux detach</code> 或 <code>Ctrl+b d</code></p>
+</li>
+<li><p>查看所有会话<code>tmux ls</code></p>
+</li>
+<li><p>接入会话<code>tmux attach -t session_name</code></p>
+</li>
+<li><p>切换会话<code>tmux switch -t session_name</code></p>
+</li>
+<li><p>杀死会话<code>tmux kill-session session_name</code></p>
+</li>
+<li><p>重命名会话<code>tmux rename-session -t session_name</code></p>
+</li>
+<li></li>
+<li><p>新建窗口<code>ctrl+b c</code></p>
+</li>
+<li><p>切换窗口<code>ctrl+b num</code></p>
+<ul>
+<li><code>ctrl+b p</code></li>
+<li><code>ctrl+b n</code></li>
+</ul>
+</li>
+<li><p>窗口划分</p>
+<ul>
+<li><code>ctrl+b &quot;</code>上下</li>
+<li><code>ctrl+b %</code>  左右</li>
+<li><code>ctrl+b +↑↓←→</code>切换pane</li>
+</ul>
+</li>
+</ul>
+<h3 id="SSH连接虚拟机"><a href="#SSH连接虚拟机" class="headerlink" title="SSH连接虚拟机"></a>SSH连接虚拟机</h3><p><strong>全是重点！！！</strong></p>
+<ul>
+<li><p>不连接root用户，只连接普通用户，比如szl，所以.ssh&#x2F;config里面的user应该填szl</p>
+</li>
+<li><p>报错：</p>
+<ul>
+<li>ip可以ping通，但ssh不能直接连<code>root@192.168.912.132</code>，只能连<code>szl@192.168.912.132</code></li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">[<span class="hljs-meta">22:23:20.608</span>] Terminating local server<br>[<span class="hljs-meta">22:23:20.611</span>] Resolver error: Error: Connecting <span class="hljs-keyword">with</span> SSH timed <span class="hljs-keyword">out</span><br></code></pre></td></tr></table></figure>
+</li>
+<li></li>
+</ul>
+<p>卸载&amp;安装：</p>
+<ul>
+<li><p>停止使用：<code>sudo systemctl stop ssh</code></p>
+</li>
+<li><p>卸载：<code>sudo apt-get remove ssh-server</code>    和  <code>sudo apt-get remove ssh-client</code></p>
+</li>
+<li><p>安装：<code>sudo apt-get install ssh-server</code> 和 <code>sudo apt-get install ssh-client</code></p>
+</li>
+<li><p>启动ssh：<code>sudo systemctl start ssh</code></p>
+</li>
+<li><p>查看ssh状态：<code>sudo service ssh status</code></p>
+</li>
+<li></li>
+</ul>
+<p>传送文件</p>
+<ul>
+<li><p>把本地目录传送到远程机器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">scp -r D:\wenjian\Code\Python\Django_module szl@192.168.192.132:/home/szl/桌面/database-lab/lab4/dj<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>远程机器上下载目录到本地</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">scp -r szl@192.168.192.132:/home/szl/桌面/database-lab/lab4/dj D:\wenjian\Code\Python\Django_module<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>数据从向右流动</p>
+</li>
+</ul>
+<hr>
+<h3 id="C语言工程开发"><a href="#C语言工程开发" class="headerlink" title="C语言工程开发"></a>C语言工程开发</h3><h4 id="1-多模块程序"><a href="#1-多模块程序" class="headerlink" title="1.多模块程序"></a>1.多模块程序</h4><p>回忆一下，在刚开始学习 C 语言的时候，我们曾经学习过，当我们的程序只有一个<code>main.c</code>文件时，我们可以在命令行中通过</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">gcc -o program <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.c</span><br></code></pre></td></tr></table></figure>
+
+<p>对单个代码文件进行编译，生成可执行文件<code>program</code>，并且通过<code>./program</code>运行编译生成的程序。在我们之前的课程中，计蒜客的学习系统也帮你进行了这样的操作。</p>
+<p>相比于单个文件、单一功能的程序，当程序有多个模块时，问题就开始变得复杂了。我们对每一个模块会首先编译出每个模块对应的<code>*.o</code><strong>目标代码文件（relocatable object file）</strong>，例如：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile">gcc -c -o set.o set.c<br></code></pre></td></tr></table></figure>
+
+<p>会将我们的一个<code>set.c</code>文件编译成一个<code>set.o</code>的目标代码文件。请注意，这里的<code>-c</code>表示生成目标代码文件。<code>-o</code>与之前单文件的时候一样，在它之后我们会写明被生成的文件的名称。</p>
+<p>当我们完成了每一个独立模块的编译并获得它们的目标代码文件后，我们可以将我们的主程序的目标代码文件与他们链接在一起。例如：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs makefile">gcc -o program main.o set.o others.o<br></code></pre></td></tr></table></figure>
+
+<p>将目标代码文件<code>set.o</code>和<code>others.o</code>与<code>main.o</code>在链接在一起，并且输出了 <strong>可执行文件（excutable file）</strong><code>program</code>。</p>
+<p>我们依然可以通过<code>./program</code>运行编译生成的程序。</p>
+<p>当我们将一个程序写在多个文件中时，每一个文件中的变量和函数默认都是只有文件内的部分才可以访问的。但是有一些特殊的全局变量、类型定义、函数可能会需要在多个文件中被使用。</p>
+<p>这时候，我们可以将这类的内容单独写成一个 <strong>头文件（header file）</strong>，并且将全局变量、类型定义、函数声明写到头文件中。</p>
+<p>对于一个文件<code>set.c</code>，习惯上它的头文件会被命名为<code>set.h</code>。在所有需要用<code>set.h</code>中全局变量、类型定义、声明的函数的文件中，用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;set.h&quot;</span></span><br></code></pre></td></tr></table></figure>
+
+<p>将对应的头文件引入。在这里的引入头文件方式和引入系统库头文件的方式很类似，只不过这里用的是引号<code>&quot;&quot;</code>而不是尖括号<code>&lt;&gt;</code>。</p>
+<p>由于头文件里也可以引入头文件，因此我们可能事实上多次引入同一个文件，比如我们引入<code>1.h</code>和<code>2.h</code>，且<code>1.h</code>也引入<code>2.h</code>，这时因为<code>2.h</code>被引入了两次，就有可能出现重复的声明。为了解决这个问题，我们在<code>2.h</code>中定义一个宏，在<code>2.h</code>的最开始判断这个宏是否被定义过，如果被定义过，就跳过<code>2.h</code>整个文件的内容。</p>
+<p>这里我们将会用到两个新的预处理指令<code>#ifndef xxx</code>和<code>#endif</code>，它们成对出现且<code>#ifndef</code>在前，作用是如果这时并未已定义<code>xxx</code>宏，则这对<code>#ifndef xxx</code>, <code>#endif</code>之间的内容有效。（其中<code>xxx</code>可以替换为任意宏名）</p>
+<p>这样<code>2.h</code>可以写为类似于如下的内容：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">ifndef</span> xxx</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> xxx</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">Status</span> &#123;</span> Success, Fail &#125;;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    <span class="hljs-type">char</span> *name;<br>    <span class="hljs-type">int</span> age;<br>&#125; People;<br>Status <span class="hljs-title function_">go_to_Jisuanke</span><span class="hljs-params">(People)</span>;<br><span class="hljs-meta">#<span class="hljs-keyword">endif</span></span><br></code></pre></td></tr></table></figure>
+
+<p>细心的同学已经发现，如果在程序中尚未引入<code>2.h</code>的位置定义了<code>xxx</code>宏，则<code>#include &quot;2.h&quot;</code>中的声明并不会被引入，因此我们不应该在此使用<code>xxx</code>这种平凡的名字。实际上，我们一般会采用一个与头文件名相关的名字来代替<code>xxx</code>，比如一个常用的代码风格里，这个宏的名字形式为<code>工程名_路径名_文件名_H_</code>。</p>
+<h4 id="2-Makefile"><a href="#2-Makefile" class="headerlink" title="2.Makefile"></a>2.Makefile</h4><p>在前面学习多模块程序的时候，我们需要先把每个模块的代码都生成为目标代码文件，然后再将目标代码文件联编成一个可执行文件。如果每一次编译都要输入这么多命令，是不是很复杂呢？如果每次修改一点点内容就需要重新编译整个工程，是不是很浪费时间呢？</p>
+<p>为了解决所遇到的问题，方便开发，我们使用一个叫做<code>make</code>的命令，它可以读取<code>Makefile</code>文件，并且根据<code>Makefile</code>中的规则描述把源文件生成为可执行的程序文件。</p>
+<p>最基本的<code>Makefile</code>中包含了一系列形式如下的规则。请注意，每一条规则的命令前，必须要有一个制表符<code>\t</code>。</p>
+<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs erlang">目标: 依赖<span class="hljs-number">1</span> 依赖<span class="hljs-number">2</span> ...<br>    命令<br></code></pre></td></tr></table></figure>
+
+<p>例如，我们可以写一条规则：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">array.o: array.c array.h</span><br>   gcc -c -o array.o array.c<br></code></pre></td></tr></table></figure>
+
+<p>表示生成的文件是目标代码文件<code>array.o</code>，它依赖于<code>array.c</code>和<code>array.h</code>。当我们在命令行中执行<code>make array.o</code>时，根据这一规则，如果<code>array.o</code>不存在或者<code>array.c</code>与<code>array.h</code>至少之一比<code>array.o</code>更新，就会执行<code>gcc -c -o array.o array.c</code>。</p>
+<p>我们把上述代码保存为<code>Makefile</code>，与<code>array.c</code>和<code>array.h</code>放在同一目录，在那个目录里执行<code>make array.o</code>就能看到效果。注意：<code>Makefile</code>里的除当前目录隐藏文件外的第一个目标会成为运行<code>make</code>不指定目标时的默认目标。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">main: array.o main.o</span><br>    gcc -o main array.o main.o<br><br><span class="hljs-section">main.o: main.c array.h</span><br>    gcc -c -o main.o main.c<br><br><span class="hljs-section">array.o: array.c array.h</span><br>    gcc -c -o array.o array.c<br></code></pre></td></tr></table></figure>
+
+<p>在<code>Makefile</code>有多条规则时，如果我们希望只生成其中一个，我们可以在<code>make</code>命令后加上需要生成的目标的名称。例如，在这里我们可以执行<code>make main.o</code>、<code>make array.o</code>或<code>make main</code>。当我们执行<code>make main</code>时，<code>make</code>命令发现<code>array.o</code>和<code>main.o</code>不存在，就会根据以它们为目标的规则先生成它们。</p>
+<p>很多时候，你会需要将<code>.o</code>为后缀的目标代码文件和可执行的程序文件删除，完全从头进行编译。那么我们可以写一条<code>clean</code>规则，例如：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">clean:</span><br>    rm -f array.o main.o main<br></code></pre></td></tr></table></figure>
+
+<p>按照预期，当我们执行<code>make clean</code>就可以删除<code>array.o</code>、<code>main.o</code>和<code>main</code>了。事实真的这样吗？</p>
+<p>细心的同学已经发现，这时如果已经存在<code>clean</code>文件，<code>rm</code>命令就不会执行了。为了解决这个问题，我们通过一个特殊的方法告诉<code>make</code>这个名为<code>clean</code>的规则在<code>clean</code>存在的时候仍然有效。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-meta"><span class="hljs-keyword">.PHONY</span>: clean</span><br><br><span class="hljs-section">clean:</span><br>    rm -f array.o main.o main<br></code></pre></td></tr></table></figure>
+
+<p><code>.PHONY</code>用于声明一些伪目标，伪目标与普通的目标的主要区别是伪目标不会被检查是否存在于文件系统中而默认不存在且不会应用默认规则生成它。</p>
+<p>在<code>Makefile</code>中我们还可以使用它的变量和注释。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"># 井号开头的行是一个注释<br># 设置 C 语言的编译器<br>CC = gcc<br><br># -g 增加调试信息<br># -Wall 打开大部分警告信息<br>CFLAGS = -g -Wall<br><br># 整理一下 main 依赖哪些目标文件<br>MAINOBJS = main.o <span class="hljs-built_in">array</span>.o<br><br>.PHONY: clean<br><br>main: $(MAINOBJS)<br>    $(CC) $(CFLAGS) -o main $(MAINOBJS)<br><br><span class="hljs-built_in">array</span>.o: <span class="hljs-built_in">array</span>.c <span class="hljs-built_in">array</span>.h<br>    $(CC) $(CFLAGS) -c -o <span class="hljs-built_in">array</span>.o <span class="hljs-built_in">array</span>.c<br><br>main.o: main.c <span class="hljs-built_in">array</span>.h<br>    $(CC) $(CFLAGS) -c -o main.o main.c<br><br>clean:<br>    rm -f $(MAINOBJS) main<br></code></pre></td></tr></table></figure>
+
+<p>上面这个例子已经是一个较为完整的<code>Makefile</code>了。以<code>#</code>开头的是我们的注释，我们在这里用注释说明了我们定义的<code>Makefile</code>变量的用途。<code>CC</code>变量定义了编译器，<code>CFLAGS</code>变量标记了编译参数，<code>MAINOBJS</code>变量记录了<code>main</code>依赖的目标文件。定义的变量可以直接通过<code>$(变量名)</code>进行使用。</p>
+<h4 id="3-命令行参数"><a href="#3-命令行参数" class="headerlink" title="3.命令行参数"></a>3.命令行参数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span> **argv)</span> &#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在这里，<code>main</code>函数有两个参数，第一个参数是整数型，会传入<strong>命令行参数的个数</strong>，程序运行时就可以接收到。第二个参数是<code>char **</code>，其中储存了<strong>用户从命令行传递进来的参数</strong>。</p>
+<p>如果我们的程序可执行文件名为<code>main</code>，则在命令行中输入<code>./main hello world</code>我们会得到<code>argc</code>为 <code>3</code>，<code>argv[0]</code>为<code>./main</code>，<code>argv[1]</code>为<code>hello</code>，<code>argv[2]</code>为<code>world</code>。如果有更多参数也可以以此类推。</p>
+<p>我们不难发现，命令行参数默认都是空格分隔，但是如果我们希望包含空格的一个字符串作为参数，我们则需要在输入参数时用引号将其包裹起来。</p>
+<p>如果我们的程序可执行文件名为<code>main</code>，则在命令行中输入<code>./main &quot;hello world&quot; is my greet</code>我们会得到<code>argc</code>为 <code>5</code>，<code>argv[0]</code>为<code>./main</code>，<code>argv[1]</code>为<code>hello world</code>，<code>argv[2]</code>为<code>is</code>，<code>argv[3]</code>为<code>my</code>，<code>argv[4]</code>为<code>greet</code>。</p>
+<p>任何被接收到的<code>argv</code>参数都可以被当做正常的字符串在代码里使用。在很多程序的设计中，我们会需要根据接收到的参数来决定程序的执行方式，这时候，学会使用<code>argc</code>和<code>argv</code>就显得很重要了。在之后的课程中，你也会需要运用这一块的知识，一定要学明白喔。</p>
+<h4 id="4-文件操作"><a href="#4-文件操作" class="headerlink" title="4.文件操作"></a>4.文件操作</h4><p>在之前的课程中，我们学习、设计的所有程序都是从标准输入进行读取、向标准输出进行写出的，操作系统为我们准备好了标准输入、标准输出的界面。在这节课中，我们将要学习如何从文件中进行读取、如何向文件进行写入。</p>
+<p>在读文件的时候我们需要先有一个可以让我们访问到文件的 <strong>文件指针（file pointer）</strong>，它是一个<code>FILE</code>类型的指针。</p>
+<p>我们可以通过下面的方式声明一个文件指针。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">FILE *fp;<br></code></pre></td></tr></table></figure>
+
+<p>这时候，如果我们希望对一个文件进行操作，我们需要先使用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">fp = fopen(文件路径, 访问模式);<br></code></pre></td></tr></table></figure>
+
+<p>将文件指针和文件关联起来，其中第一个参数是一个字符串，对应了我们希望访问的文件路径。第二个参数是访问模式，它可以是表示只读模式的<code>&quot;r&quot;</code>，也可以是表示只写模式的<code>&quot;w&quot;</code>，还可以是在文件末尾追加的<code>&quot;a&quot;</code>。</p>
+<p>当我们将文件指针和文件关联起来后，我们就可以通过<code>fgetc(fp);</code>获得当前指针之后位置的一个字符了，每获得一个字符，指针会向后移动一个字符（如果到达文件尾部则会返回<code>EOF</code>）。</p>
+<p>我们这时通过<code>fputc(&#39;c&#39;, fp);</code>的方式将字符<code>&#39;c&#39;</code>写入到<code>fp</code>关联的文件内了。</p>
+<p>了解到这些信息后，我们就可以实现将一个文件复制到另一个文件内的函数了，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">filecopy</span><span class="hljs-params">(FILE *in_fp, FILE *out_fp)</span> &#123;<br>    <span class="hljs-type">char</span> ch;<br>    <span class="hljs-keyword">while</span> ((ch = fgetc(in_fp)) != EOF) &#123;<br>        fputc(ch, out_fp);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个函数接收的两个参数都是文件指针。这个函数会通过一个可读模式的文件指针逐字符地读取，并且通过一个可写模式的文件指针逐字符地将所有字符写出，从而起到复制文件内容的作用。</p>
+<p>你需要注意，在给文件指针进行命名的时候，要避开 <code>stdin</code>、<code>stdout</code> 和 <code>stderr</code> 这三个名称。因为这三个名称其实已经用于标准输入、标准输出、标准错误的文件指针。</p>
+<p>你可能会问了，那我们看到的 <code>stdin</code>、<code>stdout</code> 和 <code>stderr</code> 的这三个文件指针可以直接使用吗？回答是肯定的。</p>
+<p>我们是通过 <code>fgetc(stdin);</code> 获得来自标准输入的字符，也可以通过 <code>fputc(ch, stdout);</code> 或 <code>fputc(ch, stderr);</code> 将变量 <code>ch</code> 中的字符输出到标准输出或标准错误中的。</p>
+<p>除了<code>fgetc</code>和<code>fputc</code>之外，我们还可以使用<code>fscanf</code>和<code>fprintf</code>函数。这两个函数都很像我们已经很熟悉的<code>scanf</code>和<code>printf</code>函数，只是不过，<code>scanf</code>和<code>printf</code> 可以被看作 <code>fscanf</code>和<code>fprintf</code> 的特例。</p>
+<p>我们使用 <code>fscanf</code> 从文件指针<code>in_fp</code>进行读取时，可以写成：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">fscanf</span>(in_fp, <span class="hljs-string">&quot;%c&quot;</span>, &amp;a);<br></code></pre></td></tr></table></figure>
+
+<p>而如果我们写</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">fscanf</span>(<span class="hljs-built_in">stdin</span>, <span class="hljs-string">&quot;%c&quot;</span>, &amp;a);<br></code></pre></td></tr></table></figure>
+
+<p>这将完全与下面直接使用 <code>scanf</code> 的方式等价。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%c&quot;</span>, &amp;a);<br></code></pre></td></tr></table></figure>
+
+<p>类似地，我们使用<code>fprintf</code>向文件指针<code>out_fp</code>进行写出时，可以写成：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">fprintf</span>(out_fp, <span class="hljs-string">&quot;%c&quot;</span>, a);<br></code></pre></td></tr></table></figure>
+
+<p>而如果我们写</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stdout</span>, <span class="hljs-string">&quot;%c&quot;</span>, a);<br></code></pre></td></tr></table></figure>
+
+<p>这将完全与下面直接使用 <code>printf</code> 的方式等价。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%c&quot;</span>, a);<br></code></pre></td></tr></table></figure>
+
+<p>在使用文件并且确定不再继续使用后，我们要通过下面所示的方式将文件指针<code>fp</code>与文件的关联断开。你可以将它视为和<code>fopen</code>相反的一个操作。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c">fclose(fp);<br></code></pre></td></tr></table></figure>
+
+<p>如果你不在程序中使用<code>fclose</code>，程序正常结束时，程序会为所有打开的文件调用<code>fclose</code>。</p>
+<p><code>stdin</code>、<code>stdout</code> 其实也是可以被打开的文件指针，如果你觉得用不到的话，其实也是可以使用 <code>fclose</code> 将他们关闭掉的。你可以自己试一试，关闭 <code>stdin</code>、<code>stdout</code> 会对我们以前写过的程序带来什么样的影响呢？</p>
+<hr>
+<hr>
+<h2 id="Missing-Semester笔记"><a href="#Missing-Semester笔记" class="headerlink" title="Missing Semester笔记"></a>Missing Semester笔记</h2><p><a target="_blank" rel="noopener" href="https://missing-semester-cn.github.io/">中文讲义</a></p>
+<h3 id="1-Shell"><a href="#1-Shell" class="headerlink" title="1.Shell"></a>1.Shell</h3><ul>
+<li><code>chmod 777 文件</code>     修改权限</li>
+<li><code>grep string fail</code>     查找字符串，-R可递归进行</li>
+</ul>
+<h3 id="2-Shell-工具和脚本"><a href="#2-Shell-工具和脚本" class="headerlink" title="2.Shell 工具和脚本"></a>2.Shell 工具和脚本</h3><ul>
+<li><pre><code class="bash">find . -name src -type d
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>  作用：在当前目录查找名为src的目录<br><br>  可用参数：<br><br>  + `-name &lt;name&gt;`<br>  + `-path <span class="hljs-string">&#x27;*/test/*.py&#x27;</span>`  查找所有路径中包含<span class="hljs-built_in">test</span>的文件<br>  + `-<span class="hljs-built_in">type</span> f/d`查找文件、目录<br>  + `-mtime -1` 查找前一天修改的所有文件<br>  + `-size +500k/-10M` 查找大于500k的文件 / 小于10M的文件<br>  + `-<span class="hljs-built_in">exec</span> <span class="hljs-built_in">rm</span> &#123;&#125; \;` 删除查找到的所有文件<br><br>+ <span class="hljs-built_in">history</span>    输出历史命令 <br><br>+ <br><br><span class="hljs-comment">#### homework </span><br><br>3. ```shell<br>   <span class="hljs-comment">#!/bin/bash</span><br>   <br>   <span class="hljs-function"><span class="hljs-title">marco</span></span>()&#123;<br>   	<span class="hljs-built_in">export</span> MARCO=$(<span class="hljs-built_in">pwd</span>)<br>   	<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;path: <span class="hljs-variable">$MARCO</span> &quot;</span><br>   &#125;<br>   <br>   <span class="hljs-function"><span class="hljs-title">polo</span></span>()&#123;<br>   <span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;<span class="hljs-variable">$MARCO</span>&quot;</span><br>   &#125;<br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<ol start="4">
+<li><pre><code class="shell">#!/bin/bash
+i=0
+while true; 
+do
+    i=$(( i+1 ))
+    n=$(( RANDOM % 100 ))
+
+    if [[ n -eq 42 ]]; then
+        echo &quot;Something went wrong&quot;
+        &gt;&amp;2 echo &quot;The error was using magic numbers&quot;
+        echo &quot;after $i times, $STDOUT, $STDERR&quot;
+        exit 1
+    fi
+
+ echo &quot;Everything went according to plan&quot;
+done
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs mel"><br><br><br><br><br><br><br><br><br>&gt; 参考链接：https:<span class="hljs-comment">//zhuanlan.zhihu.com/p/102176365，https://www.runoob.com/linux/linux-shell.html</span><br><br>+ <span class="hljs-string">`.sh`</span>文件第一行：<span class="hljs-string">`#!/bin/bash`</span><br>+ 执行<span class="hljs-string">`.sh文件`</span>：<span class="hljs-string">`./hello.sh`</span><br><br>**位置参数变量**<br><br>- <span class="hljs-string">`$n ：$0 代表命令本身、$1-$9代表第1到9个参数，10以上参数用花括号，如 $&#123;10&#125;`</span>。<br>- $?：从上一条命令中获取错误代码<br>- $_：上一个命令的最后一个参数<br>- $* ：命令行中所有参数，且把所有参数看成一个整体。<br>- $@ ：命令行中所有参数，且把每个参数区分对待。<br>- $# ：所有参数个数。<br>- 单引号会忽略逃逸字符<br>- $$进程ID<br><br>**注意**<br><br>+ <span class="hljs-string">`=`</span>两侧不能加空格<br><br><br><br><br><br><br><br>+ <br><br>+ <span class="hljs-string">`&#x27;&#x27;`</span>中的字符串不考虑转义，<span class="hljs-string">`&quot;&quot;`</span>中的字符串会转义<br><br>+ <span class="hljs-string">`mkdir -p /1/2/3`</span> 递归创建目录，不会抛出错误<br><br>+ <span class="hljs-string">`$(ls)`</span> 先执行<span class="hljs-keyword">ls</span>，执行结果替换$(<span class="hljs-keyword">ls</span>)<br><br>+ 在bash中进行比较时，尽量使用双方括号 <span class="hljs-string">`[[ ]]`</span> 而不是单方括号 <span class="hljs-string">`[ ]`</span><br><br>+ 命令支持<span class="hljs-string">`? *`</span>通配符<br><br>+ 支持<span class="hljs-string">`&#123;&#125;`</span>按行自动展开<br><br>  <span class="hljs-string">``</span><span class="hljs-string">`sh</span><br><span class="hljs-string">  convert image.&#123;png,jpg&#125;</span><br><span class="hljs-string">  # 会展开为</span><br><span class="hljs-string">  convert image.png image.jpg</span><br></code></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<p>+ </p>
+<h3 id="3-Vim"><a href="#3-Vim" class="headerlink" title="3.Vim"></a>3.Vim</h3><p>几种模式：</p>
+<ul>
+<li>主要：<code>normal</code>，按<code>esc</code>即可进入<code>normal</code>模式</li>
+<li>i: insert</li>
+<li>r: replace</li>
+<li>v: visual</li>
+<li>sfift + v: visual line</li>
+<li>ctrl + v: visual block</li>
+<li><code>:</code> command line</li>
+</ul>
+<p>快捷键：</p>
+<ul>
+<li><p><code>tabnew</code>: 新窗口</p>
+</li>
+<li><p><code>help instruction</code>: 查看帮助</p>
+</li>
+<li><p><code>sq</code>: 新窗口</p>
+</li>
+<li><p><code>qa</code>: 关闭所有窗口</p>
+</li>
+<li><p><code>hjkl</code>: 左上右下移动</p>
+</li>
+<li><p>词： <code>w</code> （下一个词）， <code>b</code> （词初）， <code>e</code> （词尾）</p>
+</li>
+<li><p>行： <code>0</code> （行初）， <code>^</code> （第一个非空格字符）， <code>$</code> （行尾）</p>
+</li>
+<li><p>屏幕： <code>H</code> （屏幕首行）， <code>M</code> （屏幕中间）， <code>L</code> （屏幕底部）</p>
+</li>
+<li><p>翻页： <code>Ctrl-u</code> （上翻）， <code>Ctrl-d</code> （下翻）</p>
+</li>
+<li><p><code>o</code>在当前光标下面重开一行并切换为INSERT模式</p>
+<p><code>O</code>上方</p>
+</li>
+<li><p><code>u</code>撤销上一步(undo)</p>
+<ul>
+<li>Ctrl+r 重做(redo)</li>
+</ul>
+</li>
+<li><p><code>d</code>删除 {移动命令}</p>
+<ul>
+<li>例如， <code>dw</code> 删除词,<code>de</code>删除到词尾, <code>d$</code> 删除到行尾, <code>d0</code> 删除到行头。</li>
+<li><code>c</code>删除并更改：删除后进入INSERT模式</li>
+</ul>
+</li>
+<li><p>按两次会作用于整行</p>
+</li>
+<li><p><code>c</code>删除单个字符</p>
+</li>
+<li><p><code>r</code>替换单个字符</p>
+</li>
+<li><p><code>y</code>复制，<code>z</code>粘贴</p>
+</li>
+<li><p><code>/</code>向下搜索</p>
+<p><code>?</code>向上搜索</p>
+</li>
+<li><p><code>.</code>重复上一步</p>
+</li>
+<li><p><code>~</code>修改大小写</p>
+</li>
+</ul>
+<h4 id="vimtutor"><a href="#vimtutor" class="headerlink" title="vimtutor"></a>vimtutor</h4><ul>
+<li>Ctrl + g 显示文档信息</li>
+<li>G 移动到文档最后一行</li>
+<li>gg第一行</li>
+<li>数字 + G：跳转到指定的行数</li>
+<li><code>s/old/new(/g)</code>（全局）用new替换old</li>
+<li><code>:! + command</code> 进行命令行操作</li>
+</ul>
+<h4 id="官方讲义："><a href="#官方讲义：" class="headerlink" title="官方讲义："></a>官方讲义：</h4><h5 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h5><p>多数时候你会在正常模式下，使用移动命令在缓存中导航。在 Vim 里面移动也被称为 “名词”， 因为它们指向文字块。</p>
+<ul>
+<li>基本移动: <code>hjkl</code> （左， 下， 上， 右）</li>
+<li>词： <code>w</code> （下一个词）， <code>b</code> （词初）， <code>e</code> （词尾）</li>
+<li>行： <code>0</code> （行初）， <code>^</code> （第一个非空格字符）， <code>$</code> （行尾）</li>
+<li>屏幕： <code>H</code> （屏幕首行）， <code>M</code> （屏幕中间）， <code>L</code> （屏幕底部）</li>
+<li>翻页： <code>Ctrl-u</code> （上翻）， <code>Ctrl-d</code> （下翻）</li>
+<li>文件： <code>gg</code> （文件头）， <code>G</code> （文件尾）</li>
+<li>行数： <code>:&#123;行数&#125;&lt;CR&gt;</code> 或者 <code>&#123;行数&#125;G</code> ({行数}为行数)</li>
+<li>杂项： <code>%</code> （找到配对，比如括号或者 &#x2F;* *&#x2F; 之类的注释对）</li>
+<li>查找：f , F ,t ,T<ul>
+<li>查找&#x2F;到 向前&#x2F;向后 在本行的{字符}</li>
+<li><code>,</code> &#x2F; <code>;</code> 用于导航匹配</li>
+</ul>
+</li>
+<li>搜索: <code>/&#123;正则表达式&#125;</code>, <code>n</code> &#x2F; <code>N</code> 用于导航匹配</li>
+</ul>
+<h5 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h5><ul>
+<li><p>i进入插入模式</p>
+<ul>
+<li>但是对于操纵&#x2F;编辑文本，不单想用退格键完成</li>
+</ul>
+</li>
+<li><p><code>O</code> &#x2F; <code>o</code> 在之上&#x2F;之下插入行</p>
+</li>
+<li><pre><code class="plaintext">d&#123;移动命令&#125;
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>  删除 &#123;移动命令&#125;<br><br>  - 例如， `dw` 删除词, `d$` 删除到行尾, `d0` 删除到行头。<br><br>- ```plaintext<br>  c&#123;移动命令&#125;<br></code></pre></td></tr></table></figure>
+
+改变 &#123;移动命令&#125;
+
+- 例如， `cw` 改变词
+- 比如 `d&#123;移动命令&#125;` 再 `i`
+</code></pre>
+</li>
+<li><p><code>x</code> 删除字符（等同于 <code>dl</code>）</p>
+</li>
+<li><p><code>s</code> 替换字符（等同于 <code>xi</code>）</p>
+</li>
+<li><p>可视化模式 + 操作</p>
+<ul>
+<li>选中文字, <code>d</code> 删除 或者 <code>c</code> 改变</li>
+</ul>
+</li>
+<li><p><code>u</code> 撤销, <code>&lt;C-r&gt;</code> 重做</p>
+</li>
+<li><p><code>y</code> 复制 &#x2F; “yank” （其他一些命令比如 <code>d</code> 也会复制）</p>
+</li>
+<li><p><code>p</code> 粘贴</p>
+</li>
+<li><p>更多值得学习的: 比如 <code>~</code> 改变字符的大小写</p>
+</li>
+</ul>
+<h5 id="修饰语"><a href="#修饰语" class="headerlink" title="修饰语"></a>修饰语</h5><p>你可以用修饰语改变“名词”的意义。修饰语有 <code>i</code>，表示“内部”或者“在内“，和 <code>a</code>， 表示”周围“。</p>
+<ul>
+<li><code>ci(</code> 改变当前括号内的内容</li>
+<li><code>ci[</code> 改变当前方括号内的内容</li>
+<li><code>da&#39;</code> 删除一个单引号字符串， 包括周围的单引号</li>
+</ul>
+<h4 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h4><ul>
+<li><p>esc映射为capslk:</p>
+<p>在<code>C:\Users\Administer\AppData\Roaming\Code\User\keybindings.json</code>中添加一句&#96;&#96;</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;capslock&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;extension.vim_escape&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="5-命令行环境"><a href="#5-命令行环境" class="headerlink" title="5.命令行环境"></a>5.命令行环境</h3><ul>
+<li><p><code>ssh myserver journalctl</code> 查看系统日志</p>
+</li>
+<li><p><code>Ctrl-C</code>的作用是发出一个<code>SIGINT</code>信号，用来中断程序。但程序可以忽略<code>SIGINT</code>信号，这是我们可以用<code>Ctrl+\</code>来发出<code>SIGQUIT</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#!/bin/python3</span><br><span class="hljs-keyword">import</span> signal, time<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">handler</span>(<span class="hljs-params">signum, time</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\nI got a SIGINT, but I am not stopping&quot;</span>)<br><br>signal.signal(signal.SIGINT, handler)<br>i = <span class="hljs-number">0</span><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    time.sleep(<span class="hljs-number">.1</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;\r&#123;&#125;&quot;</span>.<span class="hljs-built_in">format</span>(i), end=<span class="hljs-string">&quot;&quot;</span>)<br>    i += <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>暂停：<code>Ctrl+Z</code> 发出<code>SIGTSTP</code></p>
+</li>
+<li><p>命令加<code>&amp;</code>后缀会自动放入后台执行</p>
+</li>
+</ul>
+<hr>
+<h2 id="FFmpeg笔记"><a href="#FFmpeg笔记" class="headerlink" title="FFmpeg笔记"></a>FFmpeg笔记</h2><h3 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh">ffmpeg -i input.mp4 -c:vcopy -c:acopy output.mov<br>ffmpeg -i input.ts -bsf:a aac_adtstoasc -c:v copy -c:a copyoutputfromts.mp4<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="视频裁剪"><a href="#视频裁剪" class="headerlink" title="视频裁剪"></a>视频裁剪</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ffmpeg -i input.mp4 -ss 10 -t 15 -codec copy cut.mp4<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>参数：</li>
+</ol>
+<ul>
+<li><p>-i : source</p>
+</li>
+<li><p>-ss:start time</p>
+</li>
+<li><p>-t :duration</p>
+</li>
+<li><p>-c :video,audio codec</p>
+</li>
+</ul>
+<p><strong>注意</strong>：原视频只能为mp4、mkv</p>
+<h3 id="音视频混流"><a href="#音视频混流" class="headerlink" title="音视频混流"></a>音视频混流</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">ffmpeg audio.m4s -i video.m4s -acodec copy -vcodec copy output.mp4<br></code></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：这里输入可以是其他类型的文件</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><p>初始</p>
+<ul>
+<li>配置的三级作用域：<ul>
+<li><code>--global</code>作用于当前user，存储在用户目录的<code>.gitconfig</code>文件中</li>
+<li><code>--local</code>仅作用于当前仓库</li>
+<li>查看配置信息<code>git config -l</code></li>
+</ul>
+</li>
+<li>初始化一个工作区：<code>git init</code></li>
+<li><code>git add</code>：把文件修改添加到暂存区</li>
+<li><code>git commit -m &quot;message&quot;</code>：把暂存区所有内容提交到当前分支</li>
+<li><code>git remote add name git@github.com:Asxjdb/first.git</code>：关联远程仓库并指定别名<code>name</code></li>
+<li><code>git status -s</code>：查看状态</li>
+</ul>
+<p>分支</p>
+<ul>
+<li><code>git branch 分支名</code>：创建新分支</li>
+<li><code>git branch -d main</code>  删除分支</li>
+<li><code>git switch 分支名</code>：切换分支</li>
+<li><code>git merge branch111</code>： 把<code>branch111</code>分支合并到当前分支（共同的父结点）</li>
+<li><code>git rebase branch111</code>：把当前分支线性合并到<code>branch111</code>上</li>
+<li><code>git checkout HEAD^</code> &#x2F; <code>git checkout HEAD~1</code>在当前分支上移动<code>HEAD</code>标签</li>
+<li><code>git branch -f main HEAD~3</code>让分支指向另一个提交：把<code>main</code>分支强制指向<code>HEAD</code>的第三父级</li>
+<li><code>git revert main</code>：撤回main分支的一个提交</li>
+<li></li>
+</ul>
+<p>版本回退</p>
+<ul>
+<li><code>git log</code></li>
+</ul>
+<p>远程</p>
+<ul>
+<li>连接<code>git remote add origin  git@github:Asxjdb/cpu.git</code></li>
+<li>拉取<code>git pull origin main</code></li>
+<li>查看本地、远程所有分支<code>git branch -a</code></li>
+<li>删除远程分支<code>git push origin -d main</code></li>
+<li>创建远程分支并推送<code>git push -u origin master</code></li>
+<li>强制推送<code>git push -f</code></li>
+</ul>
+<h3 id="计蒜客课件"><a href="#计蒜客课件" class="headerlink" title="计蒜客课件"></a>计蒜客课件</h3><h4 id="笔记-1"><a href="#笔记-1" class="headerlink" title="笔记"></a>笔记</h4><p><strong>使用Git分支与版本切换</strong></p>
+<ul>
+<li><p><code>git branch</code> 查看现有分支</p>
+</li>
+<li><p><code>git branch &lt;分支名&gt;</code> 创建分支</p>
+</li>
+<li><p><code>git branch -d &lt;分支名&gt;</code> 删除分支</p>
+</li>
+<li><p><code>git checkout &lt;分支名&gt; / git switch &lt;分支名&gt;</code>切换分支</p>
+</li>
+<li><p><code>git checkout -b &lt;分支名&gt; / git switch -c &lt;分支名&gt; </code> 创建并切换到分支</p>
+</li>
+<li><p><code>git stash</code> 储藏当前工作目录现场</p>
+</li>
+<li><p><code>git stash pop</code> 恢复到最近储藏的现场</p>
+</li>
+<li><p><code>git stash list</code> 查看所以储藏的现场</p>
+</li>
+<li><p><code>git stash apply stash@&#123;0&#125;</code> 恢复到指定的储藏现场</p>
+</li>
+<li><p><code>git stash drop stash@&#123;0&#125;</code> 删除储藏指定位置中的指定现场</p>
+</li>
+</ul>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944206598.png" srcset="/img/loading.gif" lazyload alt="1656944206598"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944307394.png" srcset="/img/loading.gif" lazyload alt="1656944307394"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944394013.png" srcset="/img/loading.gif" lazyload alt="1656944394013"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944440047.png" srcset="/img/loading.gif" lazyload alt="1656944440047"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944471482.png" srcset="/img/loading.gif" lazyload alt="1656944471482"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944510926.png" srcset="/img/loading.gif" lazyload alt="1656944510926"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944559394.png" srcset="/img/loading.gif" lazyload alt="1656944559394"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944580663.png" srcset="/img/loading.gif" lazyload alt="1656944580663"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944597341.png" srcset="/img/loading.gif" lazyload alt="1656944597341"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944620449.png" srcset="/img/loading.gif" lazyload alt="1656944620449"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944632995.png" srcset="/img/loading.gif" lazyload alt="1656944632995"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944645952.png" srcset="/img/loading.gif" lazyload alt="1656944645952"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944660444.png" srcset="/img/loading.gif" lazyload alt="1656944660444"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944682001.png" srcset="/img/loading.gif" lazyload alt="1656944682001"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944704386.png" srcset="/img/loading.gif" lazyload alt="1656944704386"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944715579.png" srcset="/img/loading.gif" lazyload alt="1656944715579"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944733755.png" srcset="/img/loading.gif" lazyload alt="1656944733755"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656944844322.png" srcset="/img/loading.gif" lazyload alt="1656944844322"></p>
+<h4 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h4><ul>
+<li>使用<code>git status</code>这个命令来查看工作目录中有哪些文件进行过操作</li>
+<li><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999555958.png" srcset="/img/loading.gif" lazyload alt="1656999555958"></li>
+</ul>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999612634.png" srcset="/img/loading.gif" lazyload alt="1656999612634"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999847654.png" srcset="/img/loading.gif" lazyload alt="1656999847654"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999862257.png" srcset="/img/loading.gif" lazyload alt="1656999862257"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1656999882712.png" srcset="/img/loading.gif" lazyload alt="1656999882712"></p>
+<ul>
+<li><code>git checkout -b dev</code> &#x3D;&#x3D;创建并切换到<code>dev</code>分支&#x3D;&#x3D;</li>
+<li><code>git push origin dev</code> &#x3D;&#x3D;将<code>dev</code>分支推送到远端仓库&#x3D;&#x3D;</li>
+<li><code>git branch -d 参数 分支名</code> &#x3D;&#x3D;删除本地分支&#x3D;&#x3D;</li>
+<li><code>git push origin --delete suanshu</code>&#x3D;&#x3D;删除远端仓库的suanshu分支&#x3D;&#x3D;</li>
+<li><code>git branch -a</code> &#x3D;&#x3D;查看本地和仓库的所有分支&#x3D;&#x3D;</li>
+</ul>
+<h4 id="Git的远端仓库交互"><a href="#Git的远端仓库交互" class="headerlink" title="Git的远端仓库交互"></a>Git的远端仓库交互</h4><ul>
+<li><code>git remote add origin &lt;远端仓库url&gt;</code>关联本地仓库和远端版本库</li>
+<li><code>git push origin develop</code> 将本地修改推到远端</li>
+<li><code>git pull origin master</code>将远端的修改拉到本地</li>
+<li>拉取和推送</li>
+<li><ol>
+<li><code>git fetch</code> 拉取（全部分支）更新不更新工作目录</li>
+<li><code>git pull</code>拉取（全部分支）更新并根据本地分支对应分支更新工作目录</li>
+<li><code>git pull origin &lt;分支名&gt;</code> 从远端origin的指定分支进行拉取</li>
+<li><code>git push</code> 推动更新</li>
+<li><code>git push origin &lt;分支名&gt;</code> 向远端origin的指定分支名分支进行推送</li>
+</ol>
+</li>
+<li><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657012481840.png" srcset="/img/loading.gif" lazyload alt="1657012481840"></li>
+<li><code>git branch</code> 创建分支</li>
+<li><code>git checkout</code> 切换到指定的版本（或通过分支指定的版本）</li>
+<li><code>git merge</code> 完成合并：将一个分支的修改应用到当前分支</li>
+</ul>
+<h4 id="Git协作之rebase策略"><a href="#Git协作之rebase策略" class="headerlink" title="Git协作之rebase策略"></a>Git协作之rebase策略</h4><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017409226.png" srcset="/img/loading.gif" lazyload alt="1657017409226"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017421259.png" srcset="/img/loading.gif" lazyload alt="1657017421259"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017428727.png" srcset="/img/loading.gif" lazyload alt="1657017428727"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017436528.png" srcset="/img/loading.gif" lazyload alt="1657017436528"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017443961.png" srcset="/img/loading.gif" lazyload alt="1657017443961"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017451438.png" srcset="/img/loading.gif" lazyload alt="1657017451438"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017458325.png" srcset="/img/loading.gif" lazyload alt="1657017458325"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017463860.png" srcset="/img/loading.gif" lazyload alt="1657017463860"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017484411.png" srcset="/img/loading.gif" lazyload alt="1657017484411"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017490721.png" srcset="/img/loading.gif" lazyload alt="1657017490721"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017498032.png" srcset="/img/loading.gif" lazyload alt="1657017498032"></p>
+<h4 id="Git仓库配置"><a href="#Git仓库配置" class="headerlink" title="Git仓库配置"></a>Git仓库配置</h4><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017562386.png" srcset="/img/loading.gif" lazyload alt="1657017562386"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017544644.png" srcset="/img/loading.gif" lazyload alt="1657017544644"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/1657017584174.png" srcset="/img/loading.gif" lazyload alt="1657017584174"></p>
+<h4 id="Git分支与版本切换"><a href="#Git分支与版本切换" class="headerlink" title="Git分支与版本切换"></a>Git分支与版本切换</h4><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/8db546df253398ab48da24827d23267131d0f0b5.png" srcset="/img/loading.gif" lazyload alt="8db546df253398ab48da24827d23267131d0f0b5"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/040c89762e6897fd692b5b3880a9aea360e68d33.png" srcset="/img/loading.gif" lazyload alt="040c89762e6897fd692b5b3880a9aea360e68d33"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/52fe246635118be1ee19eddbe72e762f672007ee.png" srcset="/img/loading.gif" lazyload alt="52fe246635118be1ee19eddbe72e762f672007ee"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/87b5500206916e0ab39bbf14e5a0e51a69cf5abf.png" srcset="/img/loading.gif" lazyload alt="87b5500206916e0ab39bbf14e5a0e51a69cf5abf"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/2963ee17bf4a1529e6fb2c6510ec2e479808bb3b.png" srcset="/img/loading.gif" lazyload alt="2963ee17bf4a1529e6fb2c6510ec2e479808bb3b"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6360c458e279859bf515ed83fd162b25a2f3df20.png" srcset="/img/loading.gif" lazyload alt="6360c458e279859bf515ed83fd162b25a2f3df20"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/7266b75850f3a45b3a7efd063486e210da5a9672.png" srcset="/img/loading.gif" lazyload alt="7266b75850f3a45b3a7efd063486e210da5a9672"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/aec7e124ad8d472f3e5f9e7f870ac3143b4be04f.png" srcset="/img/loading.gif" lazyload alt="aec7e124ad8d472f3e5f9e7f870ac3143b4be04f"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/ba73b5b936398406da0346d550728bda76099303.png" srcset="/img/loading.gif" lazyload alt="ba73b5b936398406da0346d550728bda76099303"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/2a018112e898289ba0ee658129312ed284b43859.png" srcset="/img/loading.gif" lazyload alt="2a018112e898289ba0ee658129312ed284b43859"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/4c2cf191ddcd9a41f5f8cb6f4837514e713cee0f.png" srcset="/img/loading.gif" lazyload alt="4c2cf191ddcd9a41f5f8cb6f4837514e713cee0f"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/4f059085754da07eee317b442a275d4f078e0ee4.png" srcset="/img/loading.gif" lazyload alt="4f059085754da07eee317b442a275d4f078e0ee4"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/06f2fb7fd182cfad79eedc69f02c237a0adb8041.png" srcset="/img/loading.gif" lazyload alt="06f2fb7fd182cfad79eedc69f02c237a0adb8041"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6dc6573228ce3f3085dd67be4dc28369c999b7fa.png" srcset="/img/loading.gif" lazyload alt="6dc6573228ce3f3085dd67be4dc28369c999b7fa"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/6fb6e112375923217ab92b199dede6ff2950e659.png" srcset="/img/loading.gif" lazyload alt="6fb6e112375923217ab92b199dede6ff2950e659"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/7cd12b78dbcee668dd833387ded7f05ec94e1e50.png" srcset="/img/loading.gif" lazyload alt="7cd12b78dbcee668dd833387ded7f05ec94e1e50"></p>
+<h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>来源：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039073637">https://segmentfault.com/a/1190000039073637</a></p>
+<p><strong>蓝色的表示文件夹，白色的表示文件，绿色表示拥有所有权限，红色表示压缩包</strong>。</p>
+<ol>
+<li><strong>bin</strong> : 全称binary（二进制），该目录中存储的都是一些二进制文件，文件都是可以被运行的。</li>
+<li>boot: 这里存放一些启动linux时使用的核心文件，包括一些连接文件以及镜像文件。</li>
+<li><strong>dev</strong> :该目录中主要存放的是外接设备，例如盘，其他的光盘等。其中的外接设备不能直接被使用，需要挂载（类似Windows下的分配盘符）</li>
+<li><strong>etc</strong>: 主要存储系统管理所需的一些配置文件。</li>
+<li><strong>home</strong>: 表示“家”，存储除了root用户以外其他所有用户，类似于Windows下的user&#x2F;用户。在linux中，每个用户都有自己的家目录，一般该目录名以用户的账号命名。</li>
+</ol>
+<ul>
+<li>&#x2F;bin 可执行二进制文件的目录，如常用的命令 ls、tar、mv、cat 等实际上都是一些小的应用程序</li>
+<li>&#x2F;home 普通用户的主目录，对应Windows下的C:&#x2F;Users&#x2F;用户名&#x2F;</li>
+<li>&#x2F;root root用户的主目录（root用户是具有最高权限的用户，之后会讲）</li>
+<li>&#x2F;boot 内核文件的引导目录, 放置 linux 系统启动时用到的一些文件</li>
+<li>&#x2F;sbing 超级用户使用的指令文件</li>
+<li>&#x2F;tmp 临时文件目录，一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下。</li>
+<li>&#x2F;dev 设备文件目录，在Linux中万物皆文件，实际上你插入的U盘等设备都会在dev目录下生成一个文件，我们可以很方便地通过文件IO方式去操作外设，对嵌入式开发极为友好。</li>
+<li>&#x2F;lib 共享库，系统使用的函数库的目录，程序在执行过程中，需要调用一些额外的参数时需要函数库的协助。</li>
+<li>&#x2F;usr 第三方 程序目录</li>
+<li>&#x2F;etc 配置程序目录，系统配置文件存放的目录</li>
+<li>&#x2F;var 可变文件，放置系统执行过程中经常变化的文件</li>
+<li>&#x2F;opt 用户使用目录，给主机额外安装软件所摆放的目录。</li>
+</ul>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230502190128929.png" srcset="/img/loading.gif" lazyload alt="image-20230502190128929"></p>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><ul>
+<li><p>进入MySQL</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">mysql -u root -p 111<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看有哪些库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">show databases;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看某一库中的表单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">use sakila; // 使用指定表单<br>show tables; // 查看sakila数据库中的表单<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看表单中的列&#x2F; 字段&#x2F; 属性&#x2F; 数据项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">desc payment;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>导出到文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">select * from 19info, grade where 19info.`学号` = grade.`学号` into outfile &#x27;/var/lib/mysql/baoyan19&#x27;<br>注意只能导出到 /var/lib/mysql/baoyan19这个文件夹<br></code></pre></td></tr></table></figure>
+
+<p>从文件导入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">load data infile &#x27;/your/file/path/country&#x27; into table country<br>追加到country中，country需要有属性名<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> database();<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>();<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>单行注释</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">-- 要有一个空格<br># 空格<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>合并</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">group_conc<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h4><ul>
+<li><p>create: table, view, index</p>
+</li>
+<li><p>drop:    table, view, index</p>
+</li>
+<li><p>alter:    table</p>
+</li>
+<li><p><strong>alter</strong></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 添加<br>alter table student<br>add scome date<br><br># 修改<br>alter table stuednt<br>modify scome date<br><br># 删除<br>alter table student<br>drop unique(sname)<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>删除表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> table_name;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>视图</strong></p>
+<ul>
+<li><p>创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create view view_name [列名]<br>as 子查询<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h4><p><strong>静态约束</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">&#123;NOT NULL | DEFAULT value | <br>	[CONSTRAINT constraint_name]<br>		&#123;UNIQUE<br>		| PRIMARY KEY<br>		| CHECK(search_cond)<br>		| REFERENCES tablename [(colname)]<br>			[ON DELETE &#123;CASCADE | SET NULL&#125;]&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs mysql">Create Table Student ( <br>    Sno char(8)      not null unique, # 相当于主键了<br>    Sname char(10)   default &#x27;张三&#x27;, 	# 默认值<br>	Ssex char(2)     constraint ctssex check (Ssex=&#x27;男&#x27; or Ssex=&#x27;女&#x27;), #给出值域<br>    Sage integer     check(Sage&gt;=1 and Sage&lt;150),<br>    Dno char(2)      references Dept(Dno) on delete cascade,   # 可以这样指定外键，并规定同步删除<br>	sclass char(6)   check(Sno in (select Cno form course)),   # check里面可以有select语句<br>    constraint ctcc  check(chours/credit=20), 	#表约束：必须这样定义（另起一行）<br>	foreign key(Dno) references Dept(Dno) on delete csacade # 表约束：指定外键，并同步删除<br>);<br></code></pre></td></tr></table></figure>
+
+<p><strong>断言</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">create assertion assertion_name <br>check (...)<br></code></pre></td></tr></table></figure>
+
+<p><strong>触发器</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs mysql"># 工资只能升不能降<br># 触发器的PL/SQL块中应用OLD和NEW时，必须在它们之前加冒号(:)，属于固定用法，但在WHEN子句中则不能加冒号<br># before<br>create trigger teacher_chgsal <br>before update of salary on teacher <br>referencing new x,  old y<br>for each row <br>	when(x.salary &lt; y.salary) begin<br>		raise_application_error(-20003, &#x27;invalid salary on update&#x27;);<br>	end<br><br># 下标加一<br># after<br>create trigger sumc <br>after insert on sc <br>referencing new row newi<br>for each row begin<br>	update student set SumCourse = SumCourse + 1<br>	where Sno =: newi.Sno;<br>end;<br>	<br># 同步更新<br>create trigger updSno <br>after update of Sno on student<br>referencing old oldi, new newi<br>for each row begin<br>	update sc set Sno = newi.Sno where Sno = :oldi.Sno ;<br>end;<br><br># 同步删除<br>create trigger delSno <br>after delete on Student<br>referencing old oldi<br>for each row begin<br>	delete sc where Sno = :oldi.Sno;<br>end;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><ul>
+<li>第三方工具<code>mycli</code>：支持SQL语法高亮、自动补全，<ul>
+<li>使用方式：<code>mycli -uroot -p111</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="机场"><a href="#机场" class="headerlink" title="机场"></a>机场</h2><p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230531172442342.png" srcset="/img/loading.gif" lazyload alt="image-20230531172442342"></p>
+<p><img src="/2023/06/24/Linux%E7%AC%94%E8%AE%B0/image-20230531172501554.png" srcset="/img/loading.gif" lazyload alt="image-20230531172501554"></p>
+<h2 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h2><ul>
+<li><code>hexo g</code>    生成静态网页</li>
+<li><code>hexo s</code>    本地预览效果</li>
+<li><code>hexo d</code>    上传到github</li>
+<li><code>hexo new file_name</code>    新建博客</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+      
+        <a href="/tags/SQL/">#SQL</a>
+      
+        <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">#命令行</a>
+      
+        <a href="/tags/Git/">#Git</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Linux笔记</div>
+      <div>https://asxjdb.github.io/2023/06/24/Linux笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Asxjdb</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/24/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" title="前端笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">前端笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/22/AcWing-ch3/" title="AcWing 第3讲 搜索与图论">
+                        <span class="hidden-mobile">AcWing 第3讲 搜索与图论</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> <br/> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
