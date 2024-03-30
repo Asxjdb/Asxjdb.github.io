@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/violin-sqr.png">
+  <link rel="icon" href="/img/violin-sqr.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Asxjdb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="如题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="14届蓝桥杯省赛真题">
+<meta property="og:url" content="https://asxjdb.github.io/2024/03/30/14%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E7%9C%9F%E9%A2%98/index.html">
+<meta property="og:site_name" content="Asxjdb">
+<meta property="og:description" content="如题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-30T09:34:26.000Z">
+<meta property="article:modified_time" content="2024-03-30T09:36:42.958Z">
+<meta property="article:author" content="Asxjdb">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="蓝桥杯">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>14届蓝桥杯省赛真题 - Asxjdb</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"asxjdb.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Asxjdb</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="14届蓝桥杯省赛真题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-30 17:34" pubdate>
+          2024年3月30日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          34 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">14届蓝桥杯省赛真题</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2024-03-30T17:36:42+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>参考：<a target="_blank" rel="noopener" href="https://blog.meta-code.top/2023/04/10/2023-91/">https://blog.meta-code.top/2023/04/10/2023-91/</a></p>
+<h3 id="1-电影院排座位"><a href="#1-电影院排座位" class="headerlink" title="1 电影院排座位"></a>1 电影院排座位</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.seat</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#444451</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">45px</span>;<br>  <span class="hljs-attribute">border-top-left-radius</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">border-top-right-radius</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">10px</span>;<br>&#125;<br><br><span class="hljs-comment">/* TODO：待补充代码 */</span><br><span class="hljs-selector-class">.seat-area</span>&#123;<br>  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">50px</span>;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>&#125;<br><br><span class="hljs-selector-class">.seat</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">4</span>n+<span class="hljs-number">3</span>)&#123;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">30px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.seat</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">8</span>n+<span class="hljs-number">1</span>)&#123;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">/* 这谁知道啊 */</span><br><span class="hljs-selector-class">.seat</span><span class="hljs-selector-pseudo">:nth-child</span>(n+<span class="hljs-number">40</span>)&#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>或者：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.seat</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#444451</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">45px</span>;<br>  <span class="hljs-attribute">border-top-left-radius</span>: <span class="hljs-number">10px</span>;<br>  <span class="hljs-attribute">border-top-right-radius</span>: <span class="hljs-number">10px</span>;<br>&#125;<br><br><span class="hljs-comment">/* TODO：待补充代码 */</span><br><span class="hljs-selector-class">.seat-area</span>&#123;<br>  <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">50px</span>;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">flex-wrap</span>: wrap;<br>  <span class="hljs-attribute">gap</span>: <span class="hljs-number">10px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.seat</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">4</span>n+<span class="hljs-number">3</span>)&#123;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>gap</code>适用于<code>flex</code>和<code>grid</code></li>
+<li>底下不能有<code>padding</code>，会导致判题错误</li>
+</ul>
+<h3 id="2-图片水印生成"><a href="#2-图片水印生成" class="headerlink" title="2 图片水印生成"></a>2 图片水印生成</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">createWatermark</span>(<span class="hljs-params">text, color, deg, opacity, count</span>) &#123;<br>  <span class="hljs-keyword">const</span> container = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);<br>  container.<span class="hljs-property">className</span> = <span class="hljs-string">&quot;watermark&quot;</span>;<br>  <span class="hljs-keyword">let</span> html = <span class="hljs-string">``</span><br>  <span class="hljs-keyword">while</span> (count--) html += <span class="hljs-string">`&lt;span&gt;<span class="hljs-subst">$&#123;text&#125;</span>&lt;/span&gt;`</span><br>  container.<span class="hljs-property">innerHTML</span> = html<br>  <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(container.<span class="hljs-property">children</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> &#123;<br>    element.<span class="hljs-property">style</span>.<span class="hljs-property">color</span> = color<br>    element.<span class="hljs-property">style</span>.<span class="hljs-property">opacity</span> = opacity<br>    <span class="hljs-comment">// 不能用这个！！！</span><br>    <span class="hljs-comment">// element.style.rotate = `$&#123;deg&#125;deg`</span><br>    element.<span class="hljs-property">style</span>.<span class="hljs-property">transform</span>=<span class="hljs-string">`rotate(<span class="hljs-subst">$&#123;deg&#125;</span>deg)`</span><br>  &#125;);<br><br>  <span class="hljs-keyword">return</span> container;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>再看看CSS动画</li>
+</ul>
+<h3 id="3-收集帛书碎片"><a href="#3-收集帛书碎片" class="headerlink" title="3 收集帛书碎片"></a>3 收集帛书碎片</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">collectPuzzle</span>(<span class="hljs-params">...puzzles</span>) &#123;<br>  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 在这里写入具体的实现逻辑</span><br>  <span class="hljs-keyword">let</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>()<br>  <span class="hljs-keyword">for</span> (items <span class="hljs-keyword">of</span> puzzles) &#123;<br>    <span class="hljs-keyword">for</span> (item <span class="hljs-keyword">of</span> items) <br>     set.<span class="hljs-title function_">add</span>(item)<br>  &#125;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set);<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(set)<br>&#125;<br><br><span class="hljs-comment">// return [... new Set(puzzles.flat())]</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>看看js各对象的方法，记API</li>
+</ul>
+<h3 id="4-自适应页面"><a href="#4-自适应页面" class="headerlink" title="4 自适应页面"></a>4 自适应页面</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">800px</span>) &#123;<br>  <span class="hljs-selector-tag">nav</span><span class="hljs-selector-class">.menu</span> &#123;<br>    <span class="hljs-attribute">height</span>: <span class="hljs-number">54px</span>;<br>    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">25px</span>;<br>  &#125;<br>  <span class="hljs-selector-class">.collapse</span> &#123;<br>    <span class="hljs-attribute">display</span>: none;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">top</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;<br>    <span class="hljs-attribute">background</span>: inherit;<br>    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> <span class="hljs-number">#959595</span> solid;<br>  &#125;<br>  <span class="hljs-selector-class">.collapse</span> <span class="hljs-selector-tag">li</span> &#123;<br>    <span class="hljs-attribute">display</span>: block;<br>  &#125;<br>  <span class="hljs-selector-class">.collapse</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">ul</span>&#123;<br>    <span class="hljs-attribute">position</span>: relative;<br>  &#125;<br>  <span class="hljs-selector-tag">label</span><span class="hljs-selector-class">.menu-btn</span> &#123;<br>    <span class="hljs-attribute">display</span>: inline-block;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#999</span>;<br>    <span class="hljs-attribute">cursor</span>: pointer;<br>    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">54px</span>;<br>    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">32px</span>;<br>  &#125;<br>  <span class="hljs-selector-tag">label</span><span class="hljs-selector-class">.menu-btn</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  &#125;<br><br>  <span class="hljs-selector-tag">input</span><span class="hljs-selector-class">.menu-btn</span><span class="hljs-selector-pseudo">:checked</span> ~ <span class="hljs-selector-class">.collapse</span> &#123;<br>    <span class="hljs-attribute">display</span>: block;<br>  &#125;<br><br>  <span class="hljs-comment">/* 容易权重不够 */</span><br>  <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.row</span> &#123;<br>    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;<br>  &#125;<br><br>  <span class="hljs-comment">/* 挤到右边了 */</span><br>  <span class="hljs-selector-id">#tutorials</span> <span class="hljs-selector-class">.row</span> <span class="hljs-selector-tag">img</span> &#123;<br>    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0</span>;<br>  &#125;<br>&#125;<br><br>或者：<br><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">800px</span>) &#123;<br>  <span class="hljs-selector-class">.collapse</span> &#123;<br>    <span class="hljs-attribute">display</span>: none;<br>    <span class="hljs-attribute">border-top</span>: <span class="hljs-number">1px</span> <span class="hljs-number">#959595</span> solid;<br>  &#125;<br>  <span class="hljs-selector-class">.menu-btn</span><span class="hljs-selector-class">.icon-menu</span> &#123;<br>    <span class="hljs-attribute">display</span>: block;<br>    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">54px</span>;<br>    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">32px</span>;<br>  &#125;<br>  <span class="hljs-selector-id">#menu-btn</span><span class="hljs-selector-pseudo">:checked</span> ~ <span class="hljs-selector-tag">ul</span> &#123;<br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#252525</span>;<br>    <span class="hljs-attribute">position</span>: absolute;<br>    <span class="hljs-attribute">flex-direction</span>: column;<br>  &#125;<br>  <span class="hljs-selector-class">.menu</span> <span class="hljs-selector-tag">li</span> &#123;<br>    <span class="hljs-attribute">display</span>: flex;<br>    <span class="hljs-attribute">flex-direction</span>: column;<br>  &#125;<br>  <span class="hljs-selector-class">.dropdown</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-tag">a</span>&#123;<br>    <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">2</span>, <span class="hljs-number">107</span>, <span class="hljs-number">107</span>) <span class="hljs-meta">!important</span>;<br>  &#125;<br>  <span class="hljs-selector-class">.dropdown</span> <span class="hljs-selector-tag">ul</span> &#123;<br>    <span class="hljs-attribute">position</span>: relative;<br>  &#125;<br>  <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.row</span> &#123;<br>    <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr;<br>  &#125;<br>  <span class="hljs-selector-id">#tutorials</span> <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.row</span> <span class="hljs-selector-tag">img</span> &#123;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-class">.box</span> &#123;<br>    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">15px</span>;<br>  &#125;<br>  <span class="hljs-selector-tag">nav</span><span class="hljs-selector-class">.menu</span> &#123;<br>    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">25px</span>;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>html</code> <code>css</code>基本功不够，可以写一下<a target="_blank" rel="noopener" href="https://www.freecodecamp.org/chinese/learn">https://www.freecodecamp.org/chinese/learn</a></li>
+<li>css技巧：<ul>
+<li><code>line-height</code>可以实现垂直居中</li>
+<li>善用<code>absolute</code>和<code>relative</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="5-外卖给好评"><a href="#5-外卖给好评" class="headerlink" title="5 外卖给好评"></a>5 外卖给好评</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>  送餐速度：<span class="hljs-tag">&lt;<span class="hljs-name">el-rate</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;speed&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onchange&quot;</span> <span class="hljs-attr">show-score</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-rate</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>  外卖口味：<span class="hljs-tag">&lt;<span class="hljs-name">el-rate</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;flavour&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onchange&quot;</span> <span class="hljs-attr">show-score</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-rate</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><br>  外卖包装：<span class="hljs-tag">&lt;<span class="hljs-name">el-rate</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;pack&quot;</span> @<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;onchange&quot;</span> <span class="hljs-attr">show-score</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">el-rate</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">methods</span>: &#123;<br>  <span class="hljs-title function_">onchange</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">flavour</span> &amp;&amp; <span class="hljs-variable language_">this</span>.<span class="hljs-property">pack</span>) &#123;<br>      <span class="hljs-variable language_">this</span>.$emit(<span class="hljs-string">&#x27;change&#x27;</span>, &#123;<br>        <span class="hljs-attr">speed</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">speed</span>,<br>        <span class="hljs-attr">flavour</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">flavour</span>,<br>        <span class="hljs-attr">pack</span>:<span class="hljs-variable language_">this</span>.<span class="hljs-property">pack</span><br>      &#125;)<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>method</code>访问<code>data</code>中的数据要加上<code>this</code></li>
+<li>使用<code>emit</code>要<code>this.$emit(function, arguments)</code></li>
+<li>可以看一下：<a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/v-model.html">https://cn.vuejs.org/guide/components/v-model.html</a></li>
+</ul>
+<h3 id="6-视频弹幕"><a href="#6-视频弹幕" class="headerlink" title="6 视频弹幕"></a>6 视频弹幕</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">renderBullet</span>(<span class="hljs-params">bulletConfig, videoEle, isCreate = <span class="hljs-literal">false</span></span>) &#123;<br>  <span class="hljs-keyword">const</span> spanEle = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;SPAN&quot;</span>);<br>  spanEle.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">`bullet<span class="hljs-subst">$&#123;index&#125;</span>`</span>);<br>  videoEle.<span class="hljs-title function_">appendChild</span>(spanEle)<br>  spanEle.<span class="hljs-property">innerText</span> = bulletConfig.<span class="hljs-property">value</span><br>  <span class="hljs-comment">// isCreate = bulletConfig.isHide</span><br>  spanEle.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;getEleStyle(videoEle).height*<span class="hljs-built_in">Math</span>.random()&#125;</span>px`</span><br>  spanEle.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;getEleStyle(videoEle).width&#125;</span>px`</span><br>  <span class="hljs-keyword">if</span> (isCreate) &#123;<br>    spanEle.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&quot;create-bullet&quot;</span>);<br>  &#125;<br>  <span class="hljs-comment">// TODO：控制弹幕的显示颜色和移动，每隔 bulletConfig.time 时间，弹幕移动的距离  bulletConfig.speed</span><br>  <span class="hljs-keyword">let</span> tag=<span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-keyword">let</span> pos=spanEle.<span class="hljs-property">style</span>.<span class="hljs-property">left</span><br><br>    <span class="hljs-comment">// parseint解析到非数字自动停止</span><br>    pos = <span class="hljs-built_in">parseInt</span>(pos) - bulletConfig.<span class="hljs-property">speed</span><br>    spanEle.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;pos&#125;</span>px`</span><br>    <br>    <span class="hljs-keyword">if</span> (<span class="hljs-title function_">getEleStyle</span>(spanEle).<span class="hljs-property">right</span> &lt; <span class="hljs-title function_">getEleStyle</span>(videoEle).<span class="hljs-property">left</span>) &#123;<br>      videoEle.<span class="hljs-title function_">removeChild</span>(spanEle)<br>      <span class="hljs-built_in">clearTimeout</span>(tag)<br>    &#125;<br>  &#125;, bulletConfig.<span class="hljs-property">time</span>);<br>&#125;<br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#sendBulletBtn&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span>点击发送按钮，输入框中的文字出现在弹幕中</span><br>  <span class="hljs-comment">// console.log([e.target]);</span><br>  <span class="hljs-keyword">let</span> config = &#123;<br>    <span class="hljs-attr">isHide</span>: <span class="hljs-literal">false</span>,<br>    <span class="hljs-attr">speed</span>: <span class="hljs-number">5</span>,<br>    <span class="hljs-attr">time</span>: <span class="hljs-number">50</span>,<br>    <span class="hljs-attr">value</span>: e.<span class="hljs-property">target</span>.<span class="hljs-property">previousElementSibling</span>.<span class="hljs-property">value</span><br>  &#125;<br>  <span class="hljs-title function_">renderBullet</span>(config, videoEle,<span class="hljs-literal">true</span>)<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="7-年度明星项目"><a href="#7-年度明星项目" class="headerlink" title="7 年度明星项目"></a>7 年度明星项目</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 保存翻译文件数据的变量</span><br><span class="hljs-keyword">let</span> translation = &#123;&#125;;<br><span class="hljs-keyword">let</span> allData = &#123;&#125;<br><span class="hljs-comment">// 记录当前语言</span><br><span class="hljs-keyword">let</span> currLang = <span class="hljs-string">&quot;zh-cn&quot;</span>;<br><span class="hljs-keyword">let</span> index = <span class="hljs-number">0</span><br><br><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 请在此补充代码实现项目数据文件和翻译数据文件的请求功能</span><br><span class="hljs-keyword">let</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>()<br>xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;./js/all-data.json&#x27;</span>)<br>xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; xhr.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) &#123;<br>    allData = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(xhr.<span class="hljs-property">responseText</span>)<br>    <span class="hljs-comment">// console.log(allData);</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = index; i &lt; index + <span class="hljs-number">15</span>; i++) &#123;<br>      $(<span class="hljs-string">&quot;.list &gt; ul&quot;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-title function_">createProjectItem</span>(&#123; ...allData[i], <span class="hljs-string">&#x27;description&#x27;</span>: allData[i][currLang === <span class="hljs-string">&#x27;en&#x27;</span> ? <span class="hljs-string">&#x27;descriptionEN&#x27;</span> : <span class="hljs-string">&#x27;descriptionCN&#x27;</span>] &#125;))<br>      <span class="hljs-comment">// console.log(allData[i]);</span><br>    &#125;<br>    index += <span class="hljs-number">15</span><br>  &#125;<br>&#125;<br>xhr.<span class="hljs-title function_">send</span>()<br><br><br><span class="hljs-keyword">let</span> xhr2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>()<br>xhr2.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;./js/translation.json&#x27;</span>, <span class="hljs-literal">true</span>)<br>xhr2.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (xhr2.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; xhr2.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) &#123;<br>    translation = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(xhr2.<span class="hljs-property">responseText</span>)<br>  &#125;<br>&#125;<br>xhr2.<span class="hljs-title function_">send</span>()<br><br><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 请修改以下代码实现项目数据展示的功能</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.load-more&#x27;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;click&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = index; i &lt; index + <span class="hljs-number">15</span>; i++) &#123;<br>    $(<span class="hljs-string">&quot;.list &gt; ul&quot;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-title function_">createProjectItem</span>(&#123; ...allData[i], <span class="hljs-string">&#x27;description&#x27;</span>: allData[i][currLang === <span class="hljs-string">&#x27;en&#x27;</span> ? <span class="hljs-string">&#x27;descriptionEN&#x27;</span> : <span class="hljs-string">&#x27;descriptionCN&#x27;</span>] &#125;))<br>  &#125;<br>  index += <span class="hljs-number">15</span><br>  <span class="hljs-keyword">if</span> (index == <span class="hljs-number">60</span>) &#123;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;.load-more&#x27;</span>).<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span><br>  &#125;<br>&#125;)<br><br><span class="hljs-comment">// 用户点击切换语言的回调</span><br>$(<span class="hljs-string">&quot;.lang&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelectorAll</span>(<span class="hljs-string">&#x27;li.item p&#x27;</span>).<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item, idx</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// console.log(item.innerText, idx)</span><br>    item.<span class="hljs-property">innerText</span> = allData[idx][currLang === <span class="hljs-string">&#x27;en&#x27;</span> ? <span class="hljs-string">&#x27;descriptionEN&#x27;</span> : <span class="hljs-string">&#x27;descriptionCN&#x27;</span>]<br>  &#125;)<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>ajax</code>使用</p>
+<ul>
+<li>相当于只做了配置，默认是异步的</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>()<br>xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;./js/all-data.json&#x27;</span>)<br>xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; xhr.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) &#123;<br>    allData = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(xhr.<span class="hljs-property">responseText</span>)<br>  &#125;<br>&#125;<br>xhr.<span class="hljs-title function_">send</span>()<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="8-全球新冠疫情数据统计"><a href="#8-全球新冠疫情数据统计" class="headerlink" title="8 全球新冠疫情数据统计"></a>8 全球新冠疫情数据统计</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;select v-model=<span class="hljs-string">&quot;selectedCountry&quot;</span> @change=<span class="hljs-string">&quot;changeSelected&quot;</span>&gt;<br><br><span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>	<span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">covidData</span>: [],  <span class="hljs-attr">selectedCountry</span>: <span class="hljs-string">&quot;&quot;</span>,  <span class="hljs-attr">selectedItem</span>: &#123;&#125;, &#125;;<br>&#125;,<br>    <br><span class="hljs-attr">methods</span>:&#123;<br>    <span class="hljs-title function_">changeSelected</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">selectedItem</span> = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">covidData</span>).<span class="hljs-title function_">find</span>(<br>        <span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> element.<span class="hljs-property">Country</span> === <span class="hljs-variable language_">this</span>.<span class="hljs-property">selectedCountry</span><br>      ) <br>    &#125;,<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>methods</code>有**<code>s</code>**</li>
+<li><code>method</code>和<code>mounted</code>中使用<code>data</code>的数据要加上<code>this</code>前缀</li>
+<li><code>computed</code>一直不成功，使用<code>v-model</code>加上<code>@change</code>代替</li>
+</ul>
+<h3 id="9-Markdown文档解析"><a href="#9-Markdown文档解析" class="headerlink" title="9 Markdown文档解析"></a>9 Markdown文档解析</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parser</span> &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">heading</span> = <span class="hljs-regexp">/^(#&#123;1,6&#125;\s+)/</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">blockQuote</span> = <span class="hljs-regexp">/^(\&gt;\s+)/</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">unorderedList</span> = <span class="hljs-regexp">/^((\*|-)&#123;1&#125;\s+)/</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">image</span> = <span class="hljs-regexp">/\!\[(.*?)\]\((.*?)\)/g</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">strongText</span> = <span class="hljs-regexp">/\*&#123;2&#125;(.*?)\*&#123;2&#125;/g</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">codeLine</span> = <span class="hljs-regexp">/\`&#123;1&#125;(.*?)\`&#123;1&#125;/g</span>;<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> 补充分割符正则</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">hr</span> = <span class="hljs-regexp">/-&#123;3,&#125;/</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">quote</span> = <span class="hljs-regexp">/&gt;\s+/</span>;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">li</span> = <span class="hljs-regexp">/[\*-]\s+/</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span> = <span class="hljs-regexp">/!\[([^\]]+)\]\(([^\)]+)\)/</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">blod</span> = <span class="hljs-regexp">/([^*]*)\*&#123;2&#125;([^*]+)\*&#123;2&#125;([^*]*)/</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">code</span> = <span class="hljs-regexp">/([^\`]*)\`([^*]+)\`([^\`]*)/</span><br>  &#125;<br><br>  <span class="hljs-comment">// 获取单行内容</span><br>  <span class="hljs-title function_">parseLineText</span>(<span class="hljs-params">lineText</span>) &#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span> = lineText;<br>  &#125;<br><br>  <span class="hljs-comment">// 是否是空行</span><br>  <span class="hljs-title function_">isEmptyLine</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span> === <span class="hljs-string">&quot;&quot;</span>;<br>  &#125;<br><br>  <span class="hljs-comment">// 是否为符合标题规范</span><br>  <span class="hljs-title function_">isHeading</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">heading</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>);<br>  &#125;<br><br>  <span class="hljs-comment">// 解析标题</span><br>  <span class="hljs-title function_">parseHeading</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> temp = <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);<br>    <span class="hljs-keyword">const</span> headingLevel = temp[<span class="hljs-number">0</span>].<span class="hljs-property">length</span>;<br>    <span class="hljs-keyword">const</span> title = temp[<span class="hljs-number">1</span>].<span class="hljs-title function_">trim</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;h<span class="hljs-subst">$&#123;headingLevel&#125;</span>&gt;<span class="hljs-subst">$&#123;title&#125;</span>&lt;/h<span class="hljs-subst">$&#123;headingLevel&#125;</span>&gt;`</span>;<br>  &#125;<br><br>  <span class="hljs-title function_">isHr</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">hr</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseHr</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;hr&gt;`</span><br>  &#125;<br><br>  <span class="hljs-title function_">isQuote</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">quote</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseQuote</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> temp = <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);<br>    <span class="hljs-keyword">const</span> title = temp[<span class="hljs-number">1</span>].<span class="hljs-title function_">trim</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;p&gt;<span class="hljs-subst">$&#123;title&#125;</span>&lt;/p&gt;`</span><br>  &#125;<br><br>  <span class="hljs-title function_">isLi</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">li</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseLi</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">const</span> temp = <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot; &quot;</span>);<br>    <span class="hljs-keyword">const</span> title = temp[<span class="hljs-number">1</span>].<span class="hljs-title function_">trim</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;li&gt;<span class="hljs-subst">$&#123;title&#125;</span>&lt;/li&gt;`</span><br>  &#125;<br><br>  <span class="hljs-title function_">isImg</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseImg</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">img</span>, <span class="hljs-string">`&lt;img src=&quot;$2&quot; alt=&quot;$1&quot;&gt;`</span>)<br>  &#125;<br><br>  <span class="hljs-title function_">isBlod</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">blod</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseBlod</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">blod</span>, <span class="hljs-string">`$1&lt;b&gt;$2&lt;/b&gt;$3`</span>)<br>  &#125;<br><br>  <span class="hljs-title function_">isCode</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">code</span>.<span class="hljs-title function_">test</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>)<br>  &#125;<br>  <span class="hljs-title function_">parseCode</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">lineText</span>.<span class="hljs-title function_">replace</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">code</span>, <span class="hljs-string">`$1&lt;code&gt;$2&lt;/code&gt;$3`</span>)<br>  &#125;<br>&#125;<br><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isHr</span>()) &#123;<br>    hasParsed.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseHr</span>())<br>    currentLine++;<br>    <span class="hljs-keyword">continue</span>;<br>  &#125;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isQuote</span>()) &#123;<br>    <span class="hljs-keyword">let</span> html = <span class="hljs-string">`&lt;blockquote&gt;`</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>      html += <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseQuote</span>()<br>      currentLine++;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseLineText</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getLineText</span>(currentLine));<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isQuote</span>()) &#123;<br>        html += <span class="hljs-string">`&lt;/blockquote&gt;`</span><br>        <span class="hljs-keyword">break</span><br>      &#125;<br>    &#125;<br>    hasParsed.<span class="hljs-title function_">push</span>(html)<br>    <span class="hljs-keyword">continue</span><br>  &#125;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isLi</span>()) &#123;<br>    <span class="hljs-keyword">let</span> html = <span class="hljs-string">`&lt;ul&gt;`</span><br>    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>      html += <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseLi</span>()<br>      currentLine++;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseLineText</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">getLineText</span>(currentLine));<br>      <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isLi</span>()) &#123;<br>        html += <span class="hljs-string">`&lt;/ul&gt;`</span><br>        <span class="hljs-keyword">break</span><br>      &#125;<br>    &#125;<br>    hasParsed.<span class="hljs-title function_">push</span>(html)<br>    <span class="hljs-keyword">continue</span><br>  &#125;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isImg</span>()) &#123;<br>    hasParsed.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseImg</span>())<br>    currentLine++;<br>    <span class="hljs-keyword">continue</span><br>  &#125;<br>  <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isBlod</span>()) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseLineText</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseBlod</span>())<br>    &#125;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isCode</span>()) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseLineText</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">parseCode</span>())<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isBlod</span>() &amp;&amp; !<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-title function_">isCode</span>()) &#123;<br>      hasParsed.<span class="hljs-title function_">push</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">parser</span>.<span class="hljs-property">lineText</span>)<br>      <span class="hljs-keyword">break</span><br>    &#125;<br>  &#125;<br><br>  currentLine++;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>replace（reg, str）</code>，可以替换，可以填充捕获组，可以使用函数：<ul>
+<li><code>func(match, p1, p2, ..., pn, offset, input, groups)</code> 带参数调用：<ol>
+<li><code>match</code> —— 匹配项，</li>
+<li><code>p1, p2, ..., pn</code> —— 捕获组的内容（如有），</li>
+<li><code>offset</code> —— 匹配项的位置，</li>
+<li><code>input</code> —— 源字符串，</li>
+<li><code>groups</code> —— 具有命名的捕获组的对象。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-组课神器"><a href="#10-组课神器" class="headerlink" title="10 组课神器"></a>10 组课神器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">ajax</span>(<span class="hljs-params">&#123; url, method = <span class="hljs-string">&quot;get&quot;</span>, data &#125;</span>) &#123;<br>  <span class="hljs-keyword">let</span> result;<br>  <span class="hljs-comment">// const local = localStorage.getItem(&#x27;data&#x27;)</span><br>  <span class="hljs-comment">// return local ? JSON.stringify(local) : (await axios(url)).data.data</span><br>  <span class="hljs-comment">// async函数总是返回一个Promise对象，无论其内部返回值是什么。</span><br>  <span class="hljs-comment">// 当你在async函数中使用return语句返回一个值时，这个值会被自动包装在一个解决（resolved）状态的Promise中</span><br>  <span class="hljs-keyword">if</span> (method === <span class="hljs-string">&#x27;get&#x27;</span>) &#123;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;data&#x27;</span>)) &#123;<br>      result = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&#x27;data&#x27;</span>))<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">const</span> xhr = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>()<br>        xhr.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>, <span class="hljs-string">&#x27;./js/data.json&#x27;</span>)<br>        xhr.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>          <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span>) &#123;<br>            <span class="hljs-keyword">if</span> (xhr.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>) &#123;<br>              result = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(xhr.<span class="hljs-property">responseText</span>)<br>              <span class="hljs-title function_">resolve</span>(result.<span class="hljs-property">data</span>)<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>              <span class="hljs-title function_">reject</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">`<span class="hljs-subst">$&#123;xhr.status&#125;</span>`</span>))<br>            &#125;<br>          &#125;<br>        &#125;<br>        xhr.<span class="hljs-title function_">send</span>()<br>      &#125;)<br>    &#125;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (method = <span class="hljs-string">&#x27;post&#x27;</span>) &#123;<br>    <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(data))<br>  &#125;<br>  <span class="hljs-keyword">return</span> result<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>非递归：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">treeMenusRender</span>(<span class="hljs-params">data, grade = <span class="hljs-number">0</span></span>) &#123;<br>  <span class="hljs-keyword">let</span> treeTemplate = <span class="hljs-string">&quot;&quot;</span>;<br>  <span class="hljs-comment">// TODO：根据传入的 treeData 的数据生成树型组件的模板字符串</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> first <span class="hljs-keyword">of</span> data) &#123;<br>    treeTemplate += <span class="hljs-string">`&lt;div class=&quot;tree-node&quot; data-index=&quot;<span class="hljs-subst">$&#123;first.id&#125;</span>&quot; data-grade=&quot;1&quot;&gt;</span><br><span class="hljs-string">                      &lt;div class=&quot;tree-node-content&quot; style=&quot;margin-left: 0px&quot;&gt;</span><br><span class="hljs-string">                        &lt;div class=&quot;tree-node-content-left&quot;&gt;</span><br><span class="hljs-string">                          &lt;img src=&quot;./images/dragger.svg&quot; alt=&quot;&quot; class=&quot;point-svg&quot; /&gt;</span><br><span class="hljs-string">                          &lt;span class=&quot;tree-node-label&quot;&gt;<span class="hljs-subst">$&#123;first.label&#125;</span>&lt;/span&gt;</span><br><span class="hljs-string">                          &lt;img class=&quot;config-svg&quot; src=&quot;./images/config.svg&quot; alt=&quot;&quot; /&gt;</span><br><span class="hljs-string">                        &lt;/div&gt;</span><br><span class="hljs-string">                      &lt;/div&gt;</span><br><span class="hljs-string">                      &lt;div class=&quot;tree-node-children&quot;&gt;`</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>      treeTemplate += <span class="hljs-string">`            </span><br><span class="hljs-string">            &lt;div class=&quot;tree-node&quot; data-index=&quot;<span class="hljs-subst">$&#123;second.id&#125;</span>&quot; data-grade=&quot;2&quot;&gt;</span><br><span class="hljs-string">              &lt;div class=&quot;tree-node-content&quot; style=&quot;margin-left: 15px&quot;&gt;</span><br><span class="hljs-string">                &lt;div class=&quot;tree-node-content-left&quot;&gt;</span><br><span class="hljs-string">                  &lt;img src=&quot;./images/dragger.svg&quot; alt=&quot;&quot; class=&quot;point-svg&quot; /&gt;</span><br><span class="hljs-string">                  &lt;span class=&quot;tree-node-label&quot;&gt;<span class="hljs-subst">$&#123;second.label&#125;</span>&lt;/span&gt;</span><br><span class="hljs-string">                  &lt;img class=&quot;config-svg&quot; src=&quot;./images/config.svg&quot; alt=&quot;&quot; /&gt;</span><br><span class="hljs-string">                &lt;/div&gt;</span><br><span class="hljs-string">              &lt;/div&gt;</span><br><span class="hljs-string">              &lt;div class=&quot;tree-node-children&quot;&gt;`</span><br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> third <span class="hljs-keyword">of</span> second.<span class="hljs-property">children</span>) &#123;<br>        treeTemplate += <span class="hljs-string">`&lt;div class=&quot;tree-node&quot; data-index=&quot;<span class="hljs-subst">$&#123;third.id&#125;</span>&quot; data-grade=&quot;3&quot;&gt;</span><br><span class="hljs-string">                  &lt;div class=&quot;tree-node-content&quot; style=&quot;margin-left: 30px&quot;&gt;</span><br><span class="hljs-string">                    &lt;div class=&quot;tree-node-content-left&quot;&gt;</span><br><span class="hljs-string">                      &lt;img</span><br><span class="hljs-string">                        src=&quot;./images/dragger.svg&quot;</span><br><span class="hljs-string">                        alt=&quot;&quot;</span><br><span class="hljs-string">                        class=&quot;point-svg&quot;</span><br><span class="hljs-string">                      /&gt;</span><br><span class="hljs-string">                      &lt;span class=&quot;tree-node-tag&quot;&gt;<span class="hljs-subst">$&#123;third.tag&#125;</span>&lt;/span&gt;</span><br><span class="hljs-string">                      &lt;span class=&quot;tree-node-label&quot;&gt;<span class="hljs-subst">$&#123;third.label&#125;</span>&lt;/span&gt;</span><br><span class="hljs-string">                    &lt;/div&gt;</span><br><span class="hljs-string">                    &lt;div class=&quot;tree-node-content-right&quot;&gt;</span><br><span class="hljs-string">                      &lt;div class=&quot;students-count&quot;&gt;</span><br><span class="hljs-string">                        &lt;span class=&quot;number&quot;&gt; 0人完成&lt;/span&gt;</span><br><span class="hljs-string">                        &lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;</span><br><span class="hljs-string">                        &lt;span class=&quot;number&quot;&gt;0人提交报告&lt;/span&gt;</span><br><span class="hljs-string">                      &lt;/div&gt;</span><br><span class="hljs-string">                      &lt;div class=&quot;config&quot;&gt;</span><br><span class="hljs-string">                        &lt;img</span><br><span class="hljs-string">                          class=&quot;config-svg&quot;</span><br><span class="hljs-string">                          src=&quot;./images/config.svg&quot;</span><br><span class="hljs-string">                          alt=&quot;&quot;</span><br><span class="hljs-string">                        /&gt;</span><br><span class="hljs-string">                        &lt;button class=&quot;doc-link&quot;&gt;编辑文档&lt;/button&gt;</span><br><span class="hljs-string">                      &lt;/div&gt;</span><br><span class="hljs-string">                    &lt;/div&gt;</span><br><span class="hljs-string">                  &lt;/div&gt;</span><br><span class="hljs-string">                &lt;/div&gt;`</span><br>      &#125;<br>      <span class="hljs-comment">// 完成了data-index=&quot;1002&quot;的封口</span><br>      treeTemplate += <span class="hljs-string">`&lt;/div&gt;&lt;/div&gt;`</span><br>    &#125;<br>    treeTemplate += <span class="hljs-string">`&lt;/div&gt;&lt;/div&gt;`</span><br><br>  &#125;<br>  <span class="hljs-keyword">return</span> treeTemplate;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>递归：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">treeMenusRender</span>(<span class="hljs-params">data, grade = <span class="hljs-number">0</span></span>) &#123;<br>    <span class="hljs-keyword">let</span> treeTemplate = <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-comment">// TODO：根据传入的 treeData 的数据生成树型组件的模板字符串</span><br>    grade++;<br>    <span class="hljs-keyword">return</span> data.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">pre, cur</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">let</span> isContantChild = !!cur.<span class="hljs-property">children</span>;<br>        <span class="hljs-keyword">return</span> (treeTemplate += <span class="hljs-string">`</span><br><span class="hljs-string">        &lt;div class=&quot;tree-node&quot; data-grade=<span class="hljs-subst">$&#123;grade&#125;</span> data-index=&quot;<span class="hljs-subst">$&#123;cur.id&#125;</span>&quot;&gt;</span><br><span class="hljs-string">          &lt;div class=&quot;tree-node-content&quot; style=&quot;margin-left:<span class="hljs-subst">$&#123;(grade - <span class="hljs-number">1</span>) * <span class="hljs-number">15</span>&#125;</span>px&quot;&gt;</span><br><span class="hljs-string">            &lt;div class=&quot;tree-node-content-left&quot;&gt;</span><br><span class="hljs-string">              &lt;img class=&quot;point-svg&quot; src=&quot;./images/dragger.svg&quot; alt=&quot;点击拖动&quot; /&gt;</span><br><span class="hljs-string">              <span class="hljs-subst">$&#123;cur.tag ? <span class="hljs-string">`&lt;span class=&quot;tree-node-tag&quot;&gt;<span class="hljs-subst">$&#123;cur.tag&#125;</span>&lt;/span&gt;`</span> : <span class="hljs-string">&quot;&quot;</span>&#125;</span></span><br><span class="hljs-string">              &lt;span class=&quot;tree-node-label&quot;&gt;<span class="hljs-subst">$&#123;cur.label&#125;</span>&lt;/span&gt;</span><br><span class="hljs-string">              <span class="hljs-subst">$&#123;isContantChild ? <span class="hljs-string">`&lt;img class=&quot;config-svg&quot; src=&quot;./images/config.svg&quot; alt=&quot;设置&quot; /&gt;`</span>: <span class="hljs-string">&quot;&quot;</span>&#125;</span></span><br><span class="hljs-string">            &lt;/div&gt;</span><br><span class="hljs-string">          <span class="hljs-subst">$&#123;!isContantChild ? <span class="hljs-string">`&lt;div class=&quot;tree-node-content-right&quot;&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                &lt;div class=&quot;students-count&quot;&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  &lt;span class=&quot;number&quot;&gt; 0人完成&lt;/span&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  &lt;span class=&quot;line&quot;&gt;|&lt;/span&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  &lt;span class=&quot;number&quot;&gt;0人提交报告&lt;/span&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                &lt;/div&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                &lt;div class=&quot;config&quot;&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  &lt;img</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                    class=&quot;config-svg&quot;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                    src=&quot;./images/config.svg&quot;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                    alt=&quot;&quot;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  /&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                  &lt;button class=&quot;doc-link&quot;&gt;编辑文档&lt;/button&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">                &lt;/div&gt;</span></span></span><br><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string">              &lt;/div&gt;`</span></span></span><br><span class="hljs-subst"><span class="hljs-string">                : <span class="hljs-string">&quot;&quot;</span>&#125;</span></span><br><span class="hljs-string">          &lt;/div&gt;</span><br><span class="hljs-string">          <span class="hljs-subst">$&#123;isContantChild ?</span></span><br><span class="hljs-subst"><span class="hljs-string">            <span class="hljs-string">`&lt;div class=&quot;tree-node-children&quot;&gt; <span class="hljs-subst">$&#123;isContantChild &amp;&amp; treeMenusRender(cur.children, grade)&#125;</span> &lt;/div&gt;`</span></span></span><br><span class="hljs-subst"><span class="hljs-string">            : <span class="hljs-string">&quot;&quot;</span> &#125;</span></span><br><span class="hljs-string">      &lt;/div&gt;</span><br><span class="hljs-string">      `</span>);<br>    &#125;, <span class="hljs-string">&quot;&quot;</span>);<br>&#125;<br><br><br><span class="hljs-comment">// 作者: 百里飞洋 Barry - Flynn</span><br><span class="hljs-comment">// 链接: https://blog.meta-code.top/2023/04/10/2023-91/#10-%E7%BB%84%E8%AF%BE%E7%A5%9E%E5%99%A8%EF%BC%8825-%E5%88%86%EF%BC%89</span><br><span class="hljs-comment">// 来源: 百里飞洋</span><br><span class="hljs-comment">// 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></code></pre></td></tr></table></figure>
+
+<p>非递归</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">treeDataRefresh</span>(<span class="hljs-params"></span><br><span class="hljs-params">  &#123; dragGrade, dragElementId &#125;,</span><br><span class="hljs-params">  &#123; dropGrade, dropElementId &#125;</span><br><span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">if</span> (dragElementId === dropElementId) <span class="hljs-keyword">return</span>;<br>  <span class="hljs-comment">// TODO：根据 `dragElementId, dropElementId` 重新生成拖拽完成后的树型组件的数据 `treeData`</span><br>  <span class="hljs-comment">// 同级</span><br>  <span class="hljs-keyword">const</span> <span class="hljs-title function_">searchThird</span> = (<span class="hljs-params">target</span>) =&gt; &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> third <span class="hljs-keyword">of</span> second.<span class="hljs-property">children</span>) &#123;<br>          <span class="hljs-keyword">if</span> (third.<span class="hljs-property">id</span> == target) &#123;<br>            second.<span class="hljs-property">children</span>.<span class="hljs-title function_">splice</span>(second.<span class="hljs-property">children</span>.<span class="hljs-title function_">indexOf</span>(third), <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> third<br>          &#125;<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">const</span> <span class="hljs-title function_">searchSecond</span> = (<span class="hljs-params">target</span>) =&gt; &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>        <span class="hljs-keyword">if</span> (second.<span class="hljs-property">id</span> == target) &#123;<br>          first.<span class="hljs-property">children</span>.<span class="hljs-title function_">splice</span>(first.<span class="hljs-property">children</span>.<span class="hljs-title function_">indexOf</span>(second), <span class="hljs-number">1</span>)<br>          <span class="hljs-keyword">return</span> second<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">if</span> (dragGrade === dropGrade) &#123;<br>    <span class="hljs-comment">// 都是第三级   // 绷不住了，什么屎山，好大一坨   // 但确实完成了逻辑</span><br>    <span class="hljs-keyword">if</span> (dragGrade == <span class="hljs-number">3</span>) &#123;<br>      <span class="hljs-keyword">const</span> drag = <span class="hljs-title function_">searchThird</span>(dragElementId)<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> third <span class="hljs-keyword">of</span> second.<span class="hljs-property">children</span>) &#123;<br>            <span class="hljs-keyword">if</span> (third.<span class="hljs-property">id</span> == dropElementId) &#123;<br>              second.<span class="hljs-property">children</span>.<span class="hljs-title function_">splice</span>(second.<span class="hljs-property">children</span>.<span class="hljs-title function_">indexOf</span>(third) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, drag)<br>            &#125;<br>          &#125;<br>        &#125;<br>      &#125;<br>      <span class="hljs-comment">// 第二级</span><br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dragGrade == <span class="hljs-number">2</span>) &#123;<br>      <span class="hljs-keyword">const</span> drag = <span class="hljs-title function_">searchSecond</span>(dragElementId)<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>          <span class="hljs-keyword">if</span> (second.<span class="hljs-property">id</span> == dropElementId) &#123;<br>            first.<span class="hljs-property">children</span>.<span class="hljs-title function_">splice</span>(first.<span class="hljs-property">children</span>.<span class="hljs-title function_">indexOf</span>(second) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, drag)<br>          &#125;<br>        &#125;<br>      &#125;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dragGrade == <span class="hljs-number">1</span>) &#123;<br>      <span class="hljs-keyword">const</span> <span class="hljs-title function_">searchID</span> = (<span class="hljs-params">target</span>) =&gt; &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>          <span class="hljs-keyword">if</span> (first.<span class="hljs-property">id</span> == target) &#123;<br>            treeData.<span class="hljs-title function_">splice</span>(treeData.<span class="hljs-title function_">indexOf</span>(first), <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> first<br>          &#125;<br>        &#125;<br>      &#125;<br>      <span class="hljs-keyword">const</span> drag = <span class="hljs-title function_">searchID</span>(dragElementId)<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>        <span class="hljs-keyword">if</span> (first.<span class="hljs-property">id</span> == dropElementId) &#123;<br>          treeData.<span class="hljs-title function_">splice</span>(treeData.<span class="hljs-title function_">indexOf</span>(first) + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, drag)<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dragGrade - dropGrade == <span class="hljs-number">1</span>) &#123;<br>    <span class="hljs-comment">// 不同级 再来依托吧</span><br>    <span class="hljs-comment">// 3 和 2</span><br>    <span class="hljs-keyword">if</span> (dragGrade == <span class="hljs-number">3</span>) &#123;<br>      <span class="hljs-keyword">const</span> drag = <span class="hljs-title function_">searchThird</span>(dragElementId)<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> second <span class="hljs-keyword">of</span> first.<span class="hljs-property">children</span>) &#123;<br>          <span class="hljs-keyword">if</span> (second.<span class="hljs-property">id</span> == dropElementId) &#123;<br>            second.<span class="hljs-property">children</span>.<span class="hljs-title function_">unshift</span>(drag)<br>          &#125;<br>        &#125;<br>      &#125;<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dragGrade == <span class="hljs-number">2</span>) &#123;<br>      <span class="hljs-comment">// 2 和 1</span><br>      <span class="hljs-keyword">const</span> drag = <span class="hljs-title function_">searchSecond</span>(dragElementId)<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> first <span class="hljs-keyword">of</span> treeData) &#123;<br>        <span class="hljs-keyword">if</span> (first.<span class="hljs-property">id</span> == dropElementId) &#123;<br>          first.<span class="hljs-property">children</span>.<span class="hljs-title function_">unshift</span>(drag)<br>        &#125;<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-comment">// md，一遍就过了，没有bug</span><br>  <span class="hljs-comment">// （就算有bug也不会改了）</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>递归</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">treeDataRefresh</span>(<span class="hljs-params"></span><br><span class="hljs-params">    &#123; dragGrade, dragElementId &#125;,</span><br><span class="hljs-params">    &#123; dropGrade, dropElementId &#125;</span><br><span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">if</span> (dragElementId === dropElementId) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-comment">// TODO：根据 `dragElementId, dropElementId` 重新生成拖拽完成后的树型组件的数据 `treeData`</span><br>    <span class="hljs-comment">// 此处需要实现根据拖拽的元素 id（dragElementId）和放置的目标元素 id（dropElementId）重新生成树型组件的数据 treeData</span><br>    <span class="hljs-comment">// 从树形数据中获取并删除被拖拽的元素</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">getAndDeleteDragLabelObj</span> = (<span class="hljs-params">dragElement, data</span>) =&gt; &#123;<br>        <span class="hljs-keyword">let</span> result;<br>        <span class="hljs-comment">// 拖拽的元素的层级与放置的目标元素的层级差值应该是 1</span><br>        <span class="hljs-keyword">if</span> (dragGrade - dropGrade &gt; <span class="hljs-number">1</span> || dragGrade - dropGrade &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> result;<br>		<br>        <span class="hljs-comment">// dfs</span><br>        <span class="hljs-keyword">const</span> <span class="hljs-title function_">innerFn</span> = (<span class="hljs-params">dragElementId, data</span>) =&gt; &#123;<br>            data.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">treeObj, index, array</span>) =&gt;</span> &#123;<br>                <span class="hljs-keyword">if</span> (treeObj.<span class="hljs-property">id</span> === <span class="hljs-title class_">Number</span>(dragElementId)) &#123;<br>                    array.<span class="hljs-title function_">splice</span>(index, <span class="hljs-number">1</span>);<br>                    result = treeObj;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">// 如果当前节点有子节点，则继续递归查找拖拽的元素</span><br>                    treeObj.<span class="hljs-property">children</span> &amp;&amp; <span class="hljs-title function_">innerFn</span>(dragElementId, treeObj.<span class="hljs-property">children</span>);<br>                &#125;<br>            &#125;);<br>        &#125;;<br><br>        <span class="hljs-title function_">innerFn</span>(dragElementId, data);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;;<br>    <span class="hljs-comment">// 将被拖拽的元素插入到放置的目标元素下面</span><br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">setDragLabelObjToTreeData</span> = (<span class="hljs-params">dragLabelObj, dropElementId, data</span>) =&gt; &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; data.<span class="hljs-property">length</span>; i++) &#123;<br>            <span class="hljs-keyword">const</span> treeObj = data[i];<br>            <span class="hljs-keyword">if</span> (treeObj.<span class="hljs-property">id</span> === <span class="hljs-title class_">Number</span>(dropElementId)) &#123;<br>                <span class="hljs-keyword">if</span> (dragGrade - dropGrade === <span class="hljs-number">1</span>) &#123;<br>                    <span class="hljs-comment">// 如果拖拽的元素的层级与放置的目标元素的层级差值是 1，则将拖拽的元素设置为放置元素的子元素</span><br>                    treeObj.<span class="hljs-property">children</span><br>                        ? treeObj.<span class="hljs-property">children</span>.<span class="hljs-title function_">unshift</span>(dragLabelObj)<br>                        : (treeObj[<span class="hljs-string">&quot;children&quot;</span>] = [dragLabelObj]);<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dragGrade - dropGrade === <span class="hljs-number">0</span>) &#123;<br>                    <span class="hljs-comment">// 如果拖拽的元素的层级与放置的目标元素的层级相同，则将拖拽的元素设置为放置元素的后继元素</span><br>                    data.<span class="hljs-title function_">splice</span>(i + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, dragLabelObj);<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">// 如果当前节点有子节点，则继续递归查找拖拽的元素应该被设置的位置</span><br>                treeObj.<span class="hljs-property">children</span> &amp;&amp;<br>                    <span class="hljs-title function_">setDragLabelObjToTreeData</span>(<br>                        dragLabelObj,<br>                        dropElementId,<br>                        treeObj.<span class="hljs-property">children</span><br>                    );<br>            &#125;<br>        &#125;<br>    &#125;;<br><br>    <span class="hljs-comment">// 获取被拖拽的元素</span><br>    <span class="hljs-keyword">let</span> dragLabelObj = <span class="hljs-title function_">getAndDeleteDragLabelObj</span>(dragElementId, treeData);<br><br>    <span class="hljs-keyword">if</span> (dragElementId) &#123;<br>        <span class="hljs-comment">// 如果存在 dragElementId，则将被拖拽的元素插入到相应位置</span><br>        dragLabelObj &amp;&amp;<br>            <span class="hljs-title function_">setDragLabelObjToTreeData</span>(dragLabelObj, dropElementId, treeData);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// 否则将被拖拽的元素插入到树的顶层</span><br>        treeData.<span class="hljs-title function_">unshift</span>(dragLabelObj);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li><p>扁平化数组：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// platObj的作用是将这一级扁平</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">flatObj</span>(<span class="hljs-params">data</span>) &#123;<br>  <span class="hljs-keyword">return</span> data.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">prev, cur</span>) =&gt;</span> &#123;<br>    prev = [...prev, cur]<br>    <span class="hljs-keyword">if</span> (cur?.<span class="hljs-property">children</span>) prev = [...prev, ...<span class="hljs-title function_">flatObj</span>(cur.<span class="hljs-property">children</span>)]<br>    <span class="hljs-keyword">return</span> prev<br>  &#125;, [])<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+</li>
+<li><p>异步：</p>
+<ul>
+<li><p><code>await</code>和<code>then</code>的效果是一样的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">ajax</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; &#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">await</span> <span class="hljs-title function_">axios</span>(<span class="hljs-string">&#x27;./index.html&#x27;</span>)).<span class="hljs-property">data</span><br>&#125;<br><br><span class="hljs-comment">// const outside = async () =&gt; &#123;</span><br><span class="hljs-comment">//     console.log(await ajax());</span><br><span class="hljs-comment">// &#125;</span><br><span class="hljs-comment">// outside()</span><br><br><span class="hljs-comment">// 上下相同，只是await需要搭配try catch捕获错误</span><br><br><span class="hljs-comment">// ajax().then((result) =&gt; &#123;</span><br><span class="hljs-comment">//     console.log(result);</span><br><span class="hljs-comment">// &#125;)</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>“async” 这个单词表达了一个简单的事情：即这个函数总是返回一个 promise。其他值将自动被包装在一个 resolved 的 promise 中。</p>
+<p>例如，下面这个函数返回一个结果为 <code>1</code> 的 resolved promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-title function_">f</span>().<span class="hljs-title function_">then</span>(alert); <span class="hljs-comment">// 1</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>c</p>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>实例方法  <code>find(item=&gt; item.id===target)</code>  查找元素， 返回符合测试条件的第一个数组元素值，如果没有符合条件的则返回 undefined</li>
+<li>实例方法 <code>findIndex()</code>  查找元素的索引值</li>
+<li><code>indexOf(target)</code>：元素下标，使用的是<code>===</code></li>
+</ul>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
+      
+        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="print-no-link">#蓝桥杯</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>14届蓝桥杯省赛真题</div>
+      <div>https://asxjdb.github.io/2024/03/30/14届蓝桥杯省赛真题/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Asxjdb</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/27/2024%E7%AC%AC%E5%8D%81%E4%BA%94%E5%B1%8A%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%A8%A1%E6%8B%9F%E8%B5%9Bweb%E7%BB%84%E9%A2%98%E8%A7%A3/" title="2024第十五届蓝桥杯第二次模拟赛web组题解">
+                        <span class="hidden-mobile">2024第十五届蓝桥杯第二次模拟赛web组题解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> <br/> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
