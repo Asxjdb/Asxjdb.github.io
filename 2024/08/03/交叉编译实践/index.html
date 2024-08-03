@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/violin-sqr.png">
+  <link rel="icon" href="/img/violin-sqr.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Asxjdb">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="固件漏洞挖掘前置知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="交叉编译实践">
+<meta property="og:url" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="Asxjdb">
+<meta property="og:description" content="固件漏洞挖掘前置知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image002.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image004.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image006.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image008.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image010.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image012.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image014.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image016.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image018.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image020.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image022.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image024.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image026.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image028.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image030.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image032.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image034.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image036.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image038.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image040.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image042.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image044.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image046.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image048.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image050.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image052.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image054.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image056.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image058.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image060.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image062.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image064.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image066.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image068.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image070.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image072.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image074.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image076.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image078.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image080.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image082.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image084.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image086.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image088.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image090.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image092.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image094.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image096.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image098.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image100.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image102.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image104.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image106.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image108.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image110.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image112.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image114.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image116.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image118.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image120.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image122.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image124.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image126.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image128.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image130.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image132.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image134.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image136.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image138.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image140.jpg">
+<meta property="og:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image142.jpg">
+<meta property="article:published_time" content="2024-08-03T11:22:40.000Z">
+<meta property="article:modified_time" content="2024-08-03T14:43:31.205Z">
+<meta property="article:author" content="Asxjdb">
+<meta property="article:tag" content="网安">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://asxjdb.github.io/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image002.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>交叉编译实践 - Asxjdb</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"asxjdb.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Asxjdb</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/my-front-end/" target="_self">
+                <i class="iconfont icon-books"></i>
+                <span>我的前端笔记</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="交叉编译实践"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-03 19:22" pubdate>
+          2024年8月3日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">交叉编译实践</h1>
+            
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2024-08-03T22:43:31+08:00
+                  
+                  
+
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="什么是交叉编译"><a href="#什么是交叉编译" class="headerlink" title="什么是交叉编译"></a>什么是交叉编译</h1><p>在本架构的主机上编译出另一种架构的可执行文件。</p>
+<blockquote>
+<p>为什么需要交叉编译？</p>
+</blockquote>
+<p>可执行文件有确定的架构，如x86、MIPS、ARM等，这些可执行文件只能在对应架构的CPU上运行。一般而言，我们只需要编译出能够在自己主机架构上运行的程序。但是像路由器这些固件一般是MIPS、ARM架构的，我们要想在X64的电脑上调试这些文件，就需要用到交叉编译，常用的工具是BuildRoot。</p>
+<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ul>
+<li>学会使用Buildroot构建交叉编译工具链</li>
+<li>掌握LD_PRELOAD使用</li>
+</ul>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="完成交叉编译工具链生成"><a href="#完成交叉编译工具链生成" class="headerlink" title="完成交叉编译工具链生成"></a>完成交叉编译工具链生成</h2><h3 id="制作MIPS32-小端的BuildRoot"><a href="#制作MIPS32-小端的BuildRoot" class="headerlink" title="制作MIPS32 小端的BuildRoot"></a>制作MIPS32 小端的BuildRoot</h3><p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image002.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image004.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image006.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image008.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>编译完成：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image010.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image012.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="MIPS32-大端"><a href="#MIPS32-大端" class="headerlink" title="MIPS32 大端"></a>MIPS32 大端</h3><p>配置类似，这是编译结果：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image014.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image016.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="完成静态编译Busybox工具"><a href="#完成静态编译Busybox工具" class="headerlink" title="完成静态编译Busybox工具"></a>完成静态编译Busybox工具</h2><h3 id="编译BusyBox-MIPS小端"><a href="#编译BusyBox-MIPS小端" class="headerlink" title="编译BusyBox MIPS小端"></a>编译BusyBox MIPS小端</h3><p>把BuildRoot的bin添加到环境变量中</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image018.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>设置交叉编译头</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image020.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>静态编译</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image022.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image024.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image026.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>测试：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image028.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="大端"><a href="#大端" class="headerlink" title="大端"></a>大端</h3><p>同理：</p>
+<p>先把大端BuildBoot的bin添加到环境变量</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image030.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>重新解压一份busybox，重命名</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image032.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image034.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>-mipsel是刚才的小端busybox</p>
+<p>修改交叉编译头</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image036.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>编译完成：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image038.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image040.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这个是动态编译的</p>
+<p>设置为静态编译：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image042.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>启动编译</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image044.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>编译成功</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image046.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>测试</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image048.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="编译libpcap"><a href="#编译libpcap" class="headerlink" title="编译libpcap"></a>编译libpcap</h2><h3 id="大端libpcap"><a href="#大端libpcap" class="headerlink" title="大端libpcap"></a>大端libpcap</h3><p>官网查看编译教程</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/the-tcpdump-group/libpcap/blob/master/INSTALL.md">https://github.com/the-tcpdump-group/libpcap/blob/master/INSTALL.md</a></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image050.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>没有make menuconfig，需要在命令行中配置</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image052.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>我们需要配置的有：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image054.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这个是输出的目录，默认会放到&#x2F;usr&#x2F;bin&#x2F;local之类的地方，会全局可用。我们会准备多个版本的libpcap，自然不能添加到全局。使用—prefix&#x3D;&#x2F;home&#x2F;szl&#x2F;lib指定输出目录</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image056.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>–host是一个目标三元组，用于描述交叉编译工具链的目标架构和环境。我们应该使用mips-linux-gnu</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image058.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>CC是编译器，我们的是mips-linux-gcc，这个已经是全局变量</p>
+<p>CFALGS是头文件、优化级别、警告级别，我们只用于添加头文件</p>
+<p>LDFLAGS指定了链接库和是否静态编译，我们添加链接库</p>
+<p>遇到报错：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image060.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>更详细的报错在config.log中</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image062.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>说是需要c99，但是添加了c99或gnu99都无法解决</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://lore.kernel.org/all/20210123164535.515E78151B@busybox.osuosl.org/T/">https://lore.kernel.org/all/20210123164535.515E78151B@busybox.osuosl.org/T/</a></p>
+<p>通过硬编码ac_cv_prog_cc_c99来避免wchar_t检查问题</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image064.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image066.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>然后make</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image068.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这是因为之前留下了一些x86的libpcap文件</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image070.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>clean掉就可以</p>
+<p>然后重新make，make install</p>
+<p>去我们设置的prefix中查看</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image072.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>动态大端libpcap编译完成</p>
+<p>编译静态的libpcap失败：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image074.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>配置–static表示静态编译libpcap</p>
+<p>然后make会报错：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image076.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>即使添加-fPIC也不行</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image078.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image080.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>相同的报错，老师说动态的libpcap也可以，遂放弃编译静态libpcap</p>
+<h3 id="编译大端tcpdump"><a href="#编译大端tcpdump" class="headerlink" title="编译大端tcpdump"></a>编译大端tcpdump</h3><p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image082.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>然后make，make install</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image084.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image086.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>测试tcpdump</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image088.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>失败</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image090.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image092.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>在普通环境和chroot中都失败了</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://github.com/docker/for-mac/issues/6707">https://github.com/docker/for-mac/issues/6707</a></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image094.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>似乎qemu中的tcpdump会有问题</p>
+<h3 id="编译小端libpcap"><a href="#编译小端libpcap" class="headerlink" title="编译小端libpcap"></a>编译小端libpcap</h3><p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image096.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>先make clean一下</p>
+<p>然后make, make install</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image098.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image100.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="编译mips小端tcpdump"><a href="#编译mips小端tcpdump" class="headerlink" title="编译mips小端tcpdump"></a>编译mips小端tcpdump</h3><p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image102.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image104.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>和编译libpcap类似</p>
+<p>小端tcpdump</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image106.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>然后make，make clean</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image108.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>静态MIPS小端的tcpdump编译完成</p>
+<h2 id="LD-PRELOAD劫持随机数生成"><a href="#LD-PRELOAD劫持随机数生成" class="headerlink" title="LD_PRELOAD劫持随机数生成"></a>LD_PRELOAD劫持随机数生成</h2><p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image110.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image112.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这里提取出来的suqashfs-root是空的</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image114.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>上面提示我们没有安装sasquatch，接下来安装这个</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image116.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>PPT中虽然给了对应的解决办法</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image118.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>这个deps.sh在binwalk下面，最终目的还是为了解决binwalk的安装问题。但我们之前的Binwalk是可以正常运行的，只是现在报错了。</p>
+<p>我们可以找一下其他的解决办法：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/devttys0/sasquatch/issues/48#issuecomment-1267506233">https://github.com/devttys0/sasquatch/issues/48#issuecomment-1267506233</a></p>
+<p>这个是采用了:<a target="_blank" rel="noopener" href="https://github.com/devttys0/sasquatch/pull/47%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AApatch%E6%96%87%E4%BB%B6%E6%9D%A5%E8%BF%9B%E8%A1%8C%E8%A1%A5%E4%B8%81%E3%80%82">https://github.com/devttys0/sasquatch/pull/47中的一个patch文件来进行补丁。</a></p>
+<p>命令：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image120.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image122.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>现在正常了：</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image124.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image126.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>需要采用32位小端MIPS</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image128.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>编译test.c</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image130.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image132.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>在squashfs-root中修改文件需要root权限，我们在外面把test和so编译好再拷到squashfs-root中</p>
+<p>编译libnvram.so</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image134.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>完整的学号有13位，超过了%d的范围，我们只使用学号的后9位</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image136.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>-fPIC表示生成与位置无关的代码，创建共享库需要这个。</p>
+<p>-shared：指示编译器生成共享库。</p>
+<p>再把qemu-mipsel-static移过来</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image138.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>运行</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image140.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>劫持成功</p>
+<p>命令解释：</p>
+<p>chroot .把根目录改为了当前文件夹。我们要用到uClibc，这个文件在提取出来的&#x2F;lib下面，如果不使用chroot的话会找不到uClibc</p>
+<p><img src="/2024/08/03/%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%AE%9E%E8%B7%B5/clip_image142.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>-E是qemu用来设置环境变量的，LD_PRELOAD是一个环境变量，用于在运行时加载指定的共享库。这样test在调用rand函数时就会调用libnvram.so中的rand函数，完成劫持。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BD%91%E5%AE%89/" class="print-no-link">#网安</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>交叉编译实践</div>
+      <div>https://asxjdb.github.io/2024/08/03/交叉编译实践/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Asxjdb</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年8月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/29/%E6%88%91%E7%9A%84%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" title="我的前端笔记">
+                        <span class="hidden-mobile">我的前端笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> <br/> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
